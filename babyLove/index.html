@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Gorgeous Girl ❤️</title>
+    <style>
+        /* Mobile-first moody, romantic base */
+        body { 
+            margin: 0; 
+            padding: 30px 15px; /* Adds breathing room around the edges */
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #2c001e 0%, #1a000d 100%); 
+            /* Hide horizontal overflow, but allow vertical scrolling on small phones */
+            overflow-x: hidden; 
+            overflow-y: auto; 
+            display: flex; 
+            justify-content: center; 
+            align-items: flex-start; /* Changed from center to prevent top-cutoff */
+            min-height: 100vh; 
+            color: white;
+        }
+
+        /* Fixed container for floating elements so they don't break scrolling */
+        #animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Container for the screen */
+        .screen { 
+            margin: auto; /* Centers perfectly if there's room, respects padding if not */
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            max-width: 480px; /* Increased width as requested */
+            box-sizing: border-box; 
+            z-index: 10;
+            animation: fadeIn 1.5s ease-out forwards; 
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glassmorphism Card aesthetics */
+        .card { 
+            background: rgba(255, 255, 255, 0.05); 
+            padding: 35px 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Polaroid Photo Style */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transform: rotate(-3deg);
+            margin: 0 auto 25px auto;
+            width: 85%; /* Made photo slightly wider */
+            max-width: 280px;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            display: block;
+        }
+
+        h2 { 
+            color: #ff4d6d; 
+            font-size: 1.9rem; 
+            margin-bottom: 15px; 
+            text-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+            margin-top: 0;
+        }
+        
+        p { 
+            color: #e0e0e0; 
+            font-size: 1.15rem; 
+            line-height: 1.6; 
+            margin-bottom: 15px; 
+        }
+
+        /* Rotating text styling */
+        .compliment-box {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-style: italic;
+            color: #ffb3c6;
+            min-height: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Music Button */
+        #musicToggle {
+            background: rgba(255, 77, 109, 0.2);
+            color: #ffb3c6;
+            border: 1px solid #ff4d6d;
+            padding: 12px 25px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+            backdrop-filter: blur(5px);
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 77, 109, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+        }
+
+        /* Floating elements animation */
+        .floating-element { 
+            position: absolute; 
+            bottom: -10vh; 
+            font-size: 1.5rem; 
+            animation: floatUp ease-in infinite; 
+            opacity: 0.6; 
+            pointer-events: none; 
+        }
+
+        @keyframes floatUp { 
+            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.6; } 
+            100% { transform: translateY(-110vh) scale(1.5) rotate(45deg); opacity: 0; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="animation-container"></div>
+
+    <audio id="bgMusic" loop>
+        <source src="Enchanted_2.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="screen">
+        
+        <button id="musicToggle">🎵 Tap to Play Music</button>
+
+        <div class="card">
+            
+            <div class="polaroid">
+                <img src="baby.jpeg" alt="Us">
+            </div>
+
+            <h2>Hey Beautiful ❤️</h2>
+            
+            <p>Just thinking about you today and how absolutely stunning you are. You drive me completely crazy in the best possible way.</p>
+            
+            <p>I can't wait to have you in my arms again, to see that gorgeous smile and feel your touch. Until then, I hope this little surprise reminds you of how much I adore you, and how deeply I desire you.</p>
+            
+            <p>I love you.</p>
+
+            <div class="compliment-box">
+                <span id="changingText">I am obsessed with everything about you.</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // Trigger the floating elements as soon as the window loads
+        window.onload = function() {
+            createFloatingElements();
+            startRotatingText();
+        };
+
+        // Audio Toggle Logic
+        const musicBtn = document.getElementById('musicToggle');
+        const audio = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                musicBtn.innerText = "🎵 Tap to Play Music";
+                musicBtn.style.animation = "pulse 2s infinite";
+            } else {
+                audio.play();
+                musicBtn.innerText = "🔊 Playing...";
+                musicBtn.style.animation = "none"; 
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Rotating Compliments Array
+        const compliments = [
+            "Your beautiful mind...",
+            "The way you look at me...",
+            "Your gorgeous smile...",
+            "How perfect you feel in my arms...",
+            "Your intoxicating scent...",
+            "Everything about you."
+        ];
+
+        function startRotatingText() {
+            const textElement = document.getElementById('changingText');
+            let index = 0;
+            
+            setInterval(() => {
+                textElement.style.opacity = 0;
+                
+                setTimeout(() => {
+                    index = (index + 1) % compliments.length;
+                    textElement.innerText = "I am obsessed with... " + compliments[index];
+                    textElement.style.transition = "opacity 0.5s ease";
+                    textElement.style.opacity = 1;
+                }, 500); 
+            }, 3500); 
+        }
+
+        // Function to generate random floating hearts & stars
+        function createFloatingElements() {
+            const emojis = ['❤️', '💕', '😘', '💖', '🥀'];
+            const container = document.getElementById('animation-container');
+            
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.classList.add('floating-element');
+                el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                el.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+                
+                // Append to the fixed container instead of body
+                container.appendChild(el);
+                
+                setTimeout(() => {
+                    el.remove();
+                }, 8000);
+                
+            }, 500); 
+        }
+    </script>
+</body>
+</html>
