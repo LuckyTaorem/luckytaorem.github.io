@@ -1,0 +1,738 @@
+{
+  "input": {
+    "ageGroups": [],
+    "genders": [],
+    "interests": [],
+    "mobileReady": [],
+    "kidsFriendly": false
+  },
+  "sort": {
+    "type": "ranking_default"
+  },
+  "segments": [
+    {
+      "title": "Specially for you",
+      "count": 686,
+      "hits": [
+        {
+          "id": "106345",
+          "slug": "solve-the-square-find-out-your-iq",
+          "title": "Solve the square: Find out your IQ",
+          "description": "Test your mental skills in this captivating tactical puzzle game \"Clear the Square: Discover Your IQ\"!\nYour goal is to clear the board by removing all the figures, but there's a twist - you must tap them in the correct order, and each piece can only move in the direction shown by its arrow. ➡️⬆️⬅️⬇️\n\nEvery unnecessary move lowers your IQ score, so think strategically! 💡\n\nJump into the game now! An endless number of levels awaits — from the easiest to the mind-bendingly difficult! 🧠",
+          "gameURL": "https://playgama.com/export/game/solve-the-square-find-out-your-iq?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/solve-the-square-find-out-your-iq",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/6ecb9780-6805-44da-4a9a-d84b6ab98100/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/solve-the-square-find-out-your-iq?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "90498",
+          "slug": "tb-world",
+          "title": "TB World",
+          "description": "Discover the fascinating world of the game Toka Life, which will give you a sea of creativity and joy! Here you can bring your fantasies to life, creating stylish images for characters and cozy interiors.\n\nThe design process will be a real pleasure: choose from a variety of clothes, accessories and interior items to make each image and space unique. Transform your characters and their surroundings to create a unique atmosphere.\n\nThis game is your personal creativity workshop where you create your own story. Start your exciting journey into the world of design today and let your ideas flow, creating unique images and cozy interiors!",
+          "gameURL": "https://playgama.com/export/game/tb-world?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/tb-world",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/ace48d2d-25e1-4050-7eb7-974ef94ed200/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/tb-world?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "98057",
+          "slug": "rise-of-the-dead",
+          "title": "Rise of the Dead",
+          "description": "Dive into the intense universe of Rise of the Dead, a post-apocalyptic city filled with undead. As a brave survivor, your goal is to reclaim territories, eliminate zombies, and rescue others. Enjoy this free online game on your phone or computer, testing your strategy and combat abilities.",
+          "gameURL": "https://playgama.com/export/game/rise-of-the-dead?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/rise-of-the-dead",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/9211c296-4cf2-46fa-52fe-45a2868f6f00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/rise-of-the-dead?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "90490",
+          "slug": "mr-racer-car-racing",
+          "title": "MR RACER - Car Racing",
+          "description": "Join the excitement of MR RACER - Car Racing, where you race in sleek supercars through busy streets. Experience thrilling high-speed action for free online, playable on both mobile devices and PCs. Enjoy simple controls as you dive into the adrenaline of racing.",
+          "gameURL": "https://playgama.com/export/game/mr-racer-car-racing?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/mr-racer-car-racing",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/95797f2d-79c6-4b61-8982-f64e88f9ce00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/mr-racer-car-racing?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "97426",
+          "slug": "piece-of-cake-merge--bake",
+          "title": "Piece of Cake: Merge & Bake",
+          "description": "Join the enchanting world of Piece of Cake: Merge & Bake, an engaging game that combines puzzle-solving with café management. Explore a beautiful mansion, uncover family secrets, and help Emily grow her café into a culinary empire. Enjoy this unique experience for free on your phone or computer.",
+          "gameURL": "https://playgama.com/export/game/piece-of-cake-merge--bake?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/piece-of-cake-merge--bake",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/e41aba1d-fa37-4761-950e-a02cc4645300/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "Yes",
+          "embed": "<iframe src='https://playgama.com/export/game/piece-of-cake-merge--bake?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99720",
+          "slug": "italian-brainrot-animals-merge-puzzle",
+          "title": "Italian Brainrot: Animals Merge Puzzle ",
+          "description": "Italian Brainrot: Animals Merge Puzzle  – The Ultimate Meme Creature Merge Game!\n\nGet ready for a hilarious and addictive puzzle experience with Italian Brainrot: Animals Merge Puzzle  – the most meme-packed merge game online! Inspired by the viral fruit drop trend, this game features iconic meme creatures like Bombardiro Crocodilo, Capuccino Assasino, and many more internet favorites.\n\nHow to play? Simply merge two small meme creatures to evolve into bigger and funnier ones. Keep combining until you unlock the final giant mystery creature – can you guess what it is?\n\nItalian Brainrot: Animals Merge Puzzle  isn’t just fun – it’s eye-popping and wildly entertaining. With vibrant graphics, smooth animations, and trendy meme aesthetics, it's the perfect game for fans of brainrot humor, casual puzzles, and internet culture.\n\n🔹 Free to play online – no download required\n🔹 Playable on any device\n🔹 New meme creatures added regularly\n🔹 Perfect for quick sessions or meme marathons\n\nStart merging now and discover what meme madness awaits in Italian Brainrot: Animals Merge Puzzle!",
+          "gameURL": "https://playgama.com/export/game/italian-brainrot-animals-merge-puzzle?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/italian-brainrot-animals-merge-puzzle",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/0168c829-f5b0-4fdb-c190-6c6978d59a00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "Yes",
+          "embed": "<iframe src='https://playgama.com/export/game/italian-brainrot-animals-merge-puzzle?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "63967",
+          "slug": "zombie-space-episode-ii",
+          "title": "Zombie Space Episode II",
+          "description": "Dive into the intense world of \"Zombie Space Episode II,\" an online game set in a space station infested with zombies. Your goal is to rescue survivors, solve the apocalypse''''s secrets, and battle through relentless undead using various weapons, solo or with friends, available on both phones and PCs.",
+          "gameURL": "https://playgama.com/export/game/zombie-space-episode-ii?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/zombie-space-episode-ii",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/23c2fd05-eb67-4666-66bf-8d429dfb3400/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "Yes",
+          "embed": "<iframe src='https://playgama.com/export/game/zombie-space-episode-ii?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "72",
+          "slug": "bubble-blast",
+          "title": "Bubble Blast",
+          "description": "Bubble Blast is an entertaining casual bubble shooter where you pop bubbles and take on exciting quests. It''s the classic game you''ll catch yourself and others playing on the way to work. Advance through levels, collect coins, and sharpen your skills. Use boosters to achieve three stars and come back for daily rewards!",
+          "gameURL": "https://playgama.com/export/game/bubble-blast?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/bubble-blast",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/49ed731e-494d-462e-582c-64bf8a6a4400/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/bubble-blast?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99744",
+          "slug": "noob-saves-the-village",
+          "title": "Noob saves the village",
+          "description": "Epic battles with evil forces await you! Defending the village from enemies, collect resources and improve weapons to become an invincible defender.\n\n-A variety of enemies.\nThere is no number of them.\n\n-Arsenal upgrades.\nHave I gotten stronger? Definitely.\n\n-Destructibility of the environment.\nThat's not me, really.\n\n-Unique weapons.\nA giant anvil? Yes.\n\n-Infinite mode with leaderboards.\nBest in the world at work.",
+          "gameURL": "https://playgama.com/export/game/noob-saves-the-village?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/noob-saves-the-village",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/74501387-15e5-43a6-bd75-ad7ad87d5d00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/noob-saves-the-village?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "51",
+          "slug": "crazy-motorcycle",
+          "title": "Crazy Motorcycle",
+          "description": "Crazy Motorcycle is an exciting racing game that allows players to race motorcycles in the sky, available on various devices without downloads. Featuring vibrant graphics and thrilling gameplay, it caters to both beginners and experienced racers, providing a captivating experience for all.",
+          "gameURL": "https://playgama.com/export/game/crazy-motorcycle?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/crazy-motorcycle",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/0791177b-e5d3-424b-9a24-2d41df261400/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/crazy-motorcycle?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99645",
+          "slug": "geometry-arrow-2",
+          "title": "Geometry Arrow 2",
+          "description": "Geometry Arrow 2 — the pulse-pounding sequel to the legendary Geometry Arrow!\nFlow through a tricky cave where every move connects with the rhythm. Feel the music as you dodge, jump, and react in perfect time.\n\nYour goal: reach the portal and make it out in one piece. But the path ahead moves to the beat — and only precise timing will carry you through.\n\nNew in this chapter: the Wheel, a brand-new playable character that brings fresh movement and challenges.\nJourney through 6 handcrafted levels, each blending classic Arrow segments with exciting Wheel moments — all perfectly synced to the soundtrack.\n\nFeel the music. Follow the rhythm. Find your way.\nAre you ready to move in harmony?",
+          "gameURL": "https://playgama.com/export/game/geometry-arrow-2?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/geometry-arrow-2",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/31f565b6-e68f-4765-c30e-85eb5ddaf600/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/geometry-arrow-2?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99438",
+          "slug": "skyblock-3d-survival",
+          "title": "Skyblock 3D: Survival",
+          "description": "Embark on a unique survival adventure on floating islands in a 3D world, where each island offers valuable resources. Explore vibrant landscapes, battle monsters to grow stronger, and trade with villagers for useful items. Build plantations and breed animals to ensure a steady supply of food and resources. The skies are full of islands, each one holding secrets and challenges. Survive, craft, battle, and thrive in this exciting world!",
+          "gameURL": "https://playgama.com/export/game/skyblock-3d-survival?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/skyblock-3d-survival",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/068ae819-f79a-4e74-9e57-3921f5dba000/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/skyblock-3d-survival?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "63945",
+          "slug": "geometry-arrow",
+          "title": "Geometry Arrow",
+          "description": "Geometry Arrow is an exhilarating online arcade game where players navigate a dangerous cave filled with spikes and obstacles. Experience thrilling challenges, requiring sharp reflexes and timing to reach the exit. Ideal for action enthusiasts, can you master all six levels and escape unharmed? Unleash your inner champion!",
+          "gameURL": "https://playgama.com/export/game/geometry-arrow?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/geometry-arrow",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/861c4465-bd6d-467a-0461-9f42169fee00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/geometry-arrow?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "97358",
+          "slug": "obby-pet-simulator-x-5834-1",
+          "title": "Obby Pet Simulator X",
+          "description": "Dive into the exciting world of Obby Pet Simulator X, where you collect unique pets. Open eggs to summon rare creatures, break obstacles, and upgrade your skills. Enjoy this mesmerizing experience online for free on your mobile device or computer.",
+          "gameURL": "https://playgama.com/export/game/obby-pet-simulator-x-5834-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/obby-pet-simulator-x-5834-1",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/3ea19426-95f8-4dcc-23ee-9f2a35047900/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/obby-pet-simulator-x-5834-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "86451",
+          "slug": "sprunki-2c27-1",
+          "title": "Sprunki",
+          "description": "Enter the mesmerizing world of Sprunki, where music comes alive! This engaging online game lets you create melodies using charming Sprunki characters. Enjoy limitless sound combinations for a truly free musical adventure, accessible on both smartphones and computers.",
+          "gameURL": "https://playgama.com/export/game/sprunki-2c27-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/sprunki-2c27-1",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/54e21228-2e76-4a1d-eaa1-70953542dd00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/sprunki-2c27-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "21",
+          "slug": "idle-train-empire",
+          "title": "Idle Train Empire Tycoon",
+          "description": "Dive into the engaging world of <strong>Idle Train Empire Tycoon</strong>, where you can create and oversee your railway station. Upgrade trains, design routes, and accommodate more guests to expand your empire. Enjoy countless challenges and rewards in this exciting free online game, available on mobile and PC.",
+          "gameURL": "https://playgama.com/export/game/idle-train-empire?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/idle-train-empire",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/f2688391-95cd-4885-c18c-9acd1ce13900/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/idle-train-empire?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "86383",
+          "slug": "snake-2048-64be-1",
+          "title": "Snake 2048",
+          "description": "Snake 2048 is a fun online game where you start with a small cube and grow by consuming weaker snakes while avoiding stronger ones. Accessible on multiple platforms, it merges classic snake gameplay with strategic 2048 elements, providing engaging action for all types of players.",
+          "gameURL": "https://playgama.com/export/game/snake-2048-64be-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/snake-2048-64be-1",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/fda56bdd-8bdf-449b-08cc-9ae1f4e08200/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/snake-2048-64be-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "86391",
+          "slug": "my-town-home-family-playhouse",
+          "title": "My Town Home: Family Playhouse",
+          "description": "Discover **My Town Home: Family Playhouse**, a vibrant online dollhouse adventure that sparks your imagination. Explore six unique rooms, create family narratives, and enjoy activities like cooking and gardening. Play for **free** on your phone or computer and craft your ideal virtual family experience.",
+          "gameURL": "https://playgama.com/export/game/my-town-home-family-playhouse?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/my-town-home-family-playhouse",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/8c315efa-65c6-421d-6f7c-52849995a200/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/my-town-home-family-playhouse?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "59",
+          "slug": "fruit-merge-playgama",
+          "title": "Fruit Merge: Juicy Drop Game",
+          "description": "Fruit Merge: Juicy Drop Game offers a strategic and engaging experience where players combine similar fruits to create larger varieties. Enjoyable online gameplay requires no downloads, featuring vibrant graphics that captivate users. Accessible on iOS, Android, and desktop, it''s ideal for puzzle lovers seeking fun challenges.",
+          "gameURL": "https://playgama.com/export/game/fruit-merge-playgama?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/fruit-merge-playgama",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/f79fef60-6224-4efe-ed70-cdab6c8a3300/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/fruit-merge-playgama?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "97550",
+          "slug": "barry-prison-parkour-escape-27f2-1",
+          "title": "Barry Prison: Parkour Escape!",
+          "description": "Join the exhilarating adventure of Barry Prison: Parkour Escape! Navigate complex parkour obstacles, outsmart Warden Barry, and gather items like coins and jetpacks to execute your escape. Play for free on your phone or computer and prove your skills in this ultimate test of freedom!",
+          "gameURL": "https://playgama.com/export/game/barry-prison-parkour-escape-27f2-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/barry-prison-parkour-escape-27f2-1",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/95d8fa77-c10c-45d0-db5e-a131f52bd300/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/barry-prison-parkour-escape-27f2-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99671",
+          "slug": "hidden-object-clues-and-mysteries",
+          "title": "Hidden Object: Clues and Mysteries",
+          "description": "Hidden Object: Clues and Mysteries transforms the classic hidden object genre into an engaging adventure. Immerse yourself in a world of riddles, concealed items, and unsolved enigmas.\n\nJoin an experienced detective whose calm and reassuring voice will guide you every step of the way. Search for clues in a variety of charming locations: cozy living rooms, bustling cafés, warm kitchens, private studies, and more.\n\nEach scene is a unique setting where your keen eye and clever thinking will be essential to uncover all the hidden items.\n\nEnjoy serene melodies and a cozy ambiance, as this game is designed for relaxation and leisure. Take your time to solve every mystery and feel the satisfaction of becoming a true detective.\n",
+          "gameURL": "https://playgama.com/export/game/hidden-object-clues-and-mysteries?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/hidden-object-clues-and-mysteries",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/06ce1e86-e24c-466e-4fbb-cb4ebc2b5200/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/hidden-object-clues-and-mysteries?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99469",
+          "slug": "obby-dumb-or-genius-iq-test",
+          "title": "Obby: Dumb or Genius IQ Test",
+          "description": "Welcome to Obby: Dumb or Genius IQ Test! 🧠✨ – the ultimate game where intelligence is key! Test your brainpower by completing fun mini-games 🕹️, taking on exciting challenges 🏆, and engaging in PvP duels 🤺 to earn IQ points and level up. Collect IQ scattered across the map, win mini-games for extra boosts, or spin the wheel of fortune for random IQ rewards. The more IQ you gain, the higher your status in the game, with trophies 🏆 that can be exchanged for cool pets 🐾. Prove you''''''''''''''''re the smartest player and rise to the top of the leaderboard. Ready to show off your genius? Play now and take your IQ to the next level!",
+          "gameURL": "https://playgama.com/export/game/obby-dumb-or-genius-iq-test?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/obby-dumb-or-genius-iq-test",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/74854866-1bbe-400c-2184-7c3785591600/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/obby-dumb-or-genius-iq-test?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99664",
+          "slug": "rooftop-run",
+          "title": "Rooftop Run",
+          "description": "Rooftop Run – Race Across the City!\nRun, jump, and slide over rooftops in this fast-paced parkour game! Dodge obstacles, smash through barriers, and escape from enemies as you race through exciting levels.\nCool Parkour Moves – Jump, roll, and slide to keep running.\nFast Levels – Complete thrilling challenges and master your skills.\nSimple Controls – Easy to learn, fun to play!",
+          "gameURL": "https://playgama.com/export/game/rooftop-run?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/rooftop-run",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/f6a172bd-52d7-46a2-9180-7f2ea1853300/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/rooftop-run?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "98050",
+          "slug": "break-stick-completely",
+          "title": "Break Stick Completely",
+          "description": "Dive into the quirky realm of Break Stick Completely, where you unleash mayhem with a stick figure. Use vehicles and obstacles to create comical chaos and rack up points through fun stunts. Accessible on phone and computer, this free game promises endless laughter and enjoyment.",
+          "gameURL": "https://playgama.com/export/game/break-stick-completely?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/break-stick-completely",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/e7977913-a9c7-4c2e-fd24-76a8f1b58200/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/break-stick-completely?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "90517",
+          "slug": "watermelon-game",
+          "title": "Watermelon Game",
+          "description": "Join the exciting adventure of the Watermelon Game, where you collect and merge fruits for a thrilling experience! Match similar fruits to evolve them while avoiding overflow. Can you master the game and craft the ultimate watermelon? Try this captivating challenge on your phone or computer!",
+          "gameURL": "https://playgama.com/export/game/watermelon-game?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/watermelon-game",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/2dd9fa04-4a40-4f21-5fec-7e0751253e00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/watermelon-game?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "96760",
+          "slug": "fashion-princess--dress-up-for-girls-e00c-1",
+          "title": "Fashion Princess - Dress Up for Girls",
+          "description": "Enter the enchanting world of Fashion Princess, a free 3D dress-up game for girls. Create stunning looks with stylish outfits and accessories while competing in exciting fashion challenges. Collect crystals to unlock new styles and dances on your phone or computer, and become the ultimate fashion icon.",
+          "gameURL": "https://playgama.com/export/game/fashion-princess--dress-up-for-girls-e00c-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/fashion-princess--dress-up-for-girls-e00c-1",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/550a2e4a-759f-4dd2-badb-50f92cb05500/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/fashion-princess--dress-up-for-girls-e00c-1?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "86344",
+          "slug": "crazy-bus-station",
+          "title": "Crazy Bus Station!",
+          "description": "✨This is an exciting puzzle game in which you have to drive buses in brightly colored parking lots, solving complex problems and helping passengers find their cars.\n\n\n📕 Brief features of the game: 📘\n\n\n✅ Unique gameplay: Each level offers new and challenging challenges. 🎯\n\n✅ Variety of vehicles: Collect stylish and unique vehicles. 🚕 🚗 🚙🚌\n\n✅ For all ages: From easy to advanced levels. 👲👴\n\n✅ Colorful graphics: Immersive world with beautiful cars and characters. 💛\n\n\nEnjoy the game! 🎮",
+          "gameURL": "https://playgama.com/export/game/crazy-bus-station?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/crazy-bus-station",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/89c5478a-2853-4676-0c9c-f2c391949100/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/crazy-bus-station?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "97451",
+          "slug": "find-match-3d",
+          "title": "Find Match 3D",
+          "description": "Discover the enchanting realm of Find Match 3D, an engaging puzzle adventure where you match three similar items from a vibrant array. With beautiful visuals and relaxing play, it appeals to all ages. Compete against the clock to clear levels and reach impressive scores for a rewarding experience.",
+          "gameURL": "https://playgama.com/export/game/find-match-3d?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/find-match-3d",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/8f635523-c4ef-4818-5aac-2d045247d400/enlarged"
+          ],
+          "mobileReady": [
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/find-match-3d?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "92804",
+          "slug": "mystery-digger",
+          "title": "Mystery Digger",
+          "description": "Join the exciting journey of **Mystery Digger**, an addictive idle clicker game. Explore underground for treasures and stories. Upgrade your drill with each click to uncover fascinating finds. Enjoy this calming game on any device and satisfy your curiosity with every discovery.",
+          "gameURL": "https://playgama.com/export/game/mystery-digger?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/mystery-digger",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/1bb79285-ef34-4d95-f2d4-a70f157ab700/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/mystery-digger?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        },
+        {
+          "id": "99482",
+          "slug": "zombie-horde-build--survive",
+          "title": "Zombie Horde: Build & Survive",
+          "description": "Defend your base from hordes of zombies by shooting them with various weapons and placing turrets, barricades and traps",
+          "gameURL": "https://playgama.com/export/game/zombie-horde-build--survive?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f",
+          "playgamaGameUrl": "https://playgama.com/game/zombie-horde-build--survive",
+          "genres": [],
+          "tags": [],
+          "images": [
+            "https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/05514c36-f34a-4deb-33c2-fa9203a0bb00/enlarged"
+          ],
+          "mobileReady": [
+            "For Android",
+            "For IOS",
+            "For Desktop"
+          ],
+          "gender": [
+            "Male",
+            "Female"
+          ],
+          "inGamePurchases": "No",
+          "embed": "<iframe src='https://playgama.com/export/game/zombie-horde-build--survive?clid=p_75b7dc81-4700-4a8a-a6aa-df97b8fa2a0f' frameborder='0' width='800' height='450'></iframe>"
+        }
+        
+        ]
+    }
+    ]
+}
