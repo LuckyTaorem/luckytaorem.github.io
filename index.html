@@ -940,31 +940,46 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/luckytaorem5@gmail.com" method="POST" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-              <div class="form-group mt-3">
-                <div class="g-recaptcha" data-sitekey="6LeylYorAAAAAEYEVY6UdDcv5DqjyVnIGmpLUncZ"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-              </div>
-              <input type="hidden" name="_subject" value="New submission!">
-              <input type="hidden" name="_next" value="https://luckytaorem.github.io/ty.html">
-            </form>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-          </div>
+    <form id="contactForm" class="php-email-form">
+        
+        <!-- Web3Forms Required Key -->
+        <input type="hidden" name="access_key" value="c8c0dcd0-b544-46a8-a217-8720aa943c44">
+        <input type="hidden" name="subject" value="New Submission from your Portfolio!">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <input type="text" class="form-control" name="user_subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+        </div>
+        
+        <!-- Official Web3Forms hCaptcha Widget -->
+        <div class="form-group mt-3 text-center">
+            <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+        </div>
+
+        <!-- Status Message Box -->
+        <div id="formStatus" class="mt-3 text-center" style="display: none; font-weight: bold; padding: 10px; border-radius: 5px;"></div>
+
+        <div class="form-group mt-3">
+            <div class="text-center">
+                <button type="submit" id="submitBtn">Send Message</button>
+            </div>
+        </div>
+    </form>
+    
+    <!-- hCaptcha Script -->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</div>
 
         </div>
 
@@ -976,16 +991,54 @@ document.addEventListener("DOMContentLoaded", function() {
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3 class="name"></h3>
-      <p>ASPRING WEB AND SOFTWARE DEVELOPER</p>
-      <div class="social-links">
-        <a href="https://x.com/taorem_lucky" class="x"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-</svg></a>
-        <a href="https://www.facebook.com/luckytaorem5/" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/luckytaorem5/" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://github.com/LuckyTaorem" class="github"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/luckytaorem/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <div class="footer-top row text-center text-md-start">
+        
+        <!-- Brand Info -->
+        <div class="col-lg-4 col-md-6 footer-info mb-4 mb-lg-0">
+          <h3>Taorem Lucky Singh</h3>
+          <p>
+            Aspiring Web & Software Developer.<br>
+            Passionate about building fast, modern websites, optimizing digital content, and creating seamless user experiences.
+          </p>
+        </div>
+
+        <!-- Quick Links (Mirrors Menu) -->
+        <div class="col-lg-4 col-md-6 footer-links mb-4 mb-lg-0">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero" class="scrollto">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about" class="scrollto">About Me</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#resume" class="scrollto">Resume & Internship</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#project" class="scrollto">Projects</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#github" class="scrollto">GitHub Repos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#certificate" class="scrollto">Certificates</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-lg-4 col-md-12 footer-social">
+          <h4>Connect With Me</h4>
+          <p>Let's build something great together. Feel free to reach out on any of these platforms.</p>
+          <div class="social-links mt-3">
+            <a href="https://x.com/taorem_lucky" class="x" aria-label="Twitter X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/luckytaorem5/" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/luckytaorem5/" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/LuckyTaorem" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/luckytaorem/" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="container footer-bottom">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Taorem Lucky Singh</span></strong>. All Rights Reserved.
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -1100,23 +1153,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const ctx = canvas.getContext('2d');
     let width, height;
     
-    // Grid Configuration
+    // Configuration - Optimized & Colorful
     const config = {
-        gridSpacing: 50,  // Distance between crosses
-        crossSize: 3,     // Size of the plus sign
-        mouseDist: 150,   // Effect radius
-        colorLight: 'rgba(0, 0, 0, 0.1)',      // Light Mode Grid
-        colorDark: 'rgba(255, 255, 255, 0.1)', // Dark Mode Grid
-        accentLight: '112, 0, 255',            // Light Mode Active (Purple)
-        accentDark: '0, 243, 255'              // Dark Mode Active (Cyan)
+        particleCount: 80,      
+        particleBaseSize: 2.5,  // Slightly larger to show off colors
+        connectDistance: 130,   
+        mouseRadius: 150,       
+        speed: 0.5,             
+        // Vibrant but professional color palettes (RGB values)
+        paletteLight: ['236, 72, 153', '59, 130, 246', '16, 185, 129', '139, 92, 246'], // Pink, Blue, Emerald, Purple
+        paletteDark: ['244, 114, 182', '96, 165, 250', '52, 211, 153', '167, 139, 250'], 
+        accentLight: '112, 0, 255',   
+        accentDark: '0, 243, 255'     
     };
 
+    let particles = [];
     let mouse = { x: null, y: null };
-    let gridPoints = [];
+    let lastScrollY = window.scrollY || document.documentElement.scrollTop;
 
-    // 1. Theme Check
-    let currentBase = config.colorDark;
-    let currentAccent = config.accentDark;
+    // Theme Setup
+    let currentPalette = config.paletteDark;
+    let currentLineColor = config.accentDark;
 
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((m) => {
@@ -1127,89 +1184,147 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateTheme() {
         if (document.body.classList.contains('light-mode')) {
-            currentBase = config.colorLight;
-            currentAccent = config.accentLight;
+            currentPalette = config.paletteLight;
+            currentLineColor = config.accentLight;
         } else {
-            currentBase = config.colorDark;
-            currentAccent = config.accentDark;
+            currentPalette = config.paletteDark;
+            currentLineColor = config.accentDark;
         }
     }
     updateTheme();
 
-    // 2. Setup
-    window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+    // Event Listeners
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Scroll Interaction Effect
+    window.addEventListener('scroll', () => {
+        let currentScrollY = window.scrollY || document.documentElement.scrollTop;
+        let scrollDelta = currentScrollY - lastScrollY;
+        lastScrollY = currentScrollY;
+
+        // Apply scroll momentum to particles
+        particles.forEach(p => {
+            p.vy -= scrollDelta * 0.03; // Push particles based on scroll speed
+        });
+    });
+
     window.addEventListener('resize', init);
 
-    class Point {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.angle = 0;
-            this.active = 0; // 0 to 1
+    // Particle Class
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            // Store base speed to recover from scroll momentum
+            this.baseVx = (Math.random() - 0.5) * config.speed;
+            this.baseVy = (Math.random() - 0.5) * config.speed;
+            this.vx = this.baseVx;
+            this.vy = this.baseVy;
+            this.size = Math.random() * config.particleBaseSize + 1.5;
+            // Assign a random color from the palette
+            this.colorIndex = Math.floor(Math.random() * currentPalette.length);
         }
 
         update() {
-            // Calculate distance to mouse
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let dist = Math.sqrt(dx*dx + dy*dy);
+            // Smoothly recover from scroll pushes back to normal speed
+            this.vy += (this.baseVy - this.vy) * 0.05;
 
-            // Interaction
-            if (mouse.x != null && dist < config.mouseDist) {
-                this.active = 1 - (dist / config.mouseDist);
-                // Rotate based on mouse position
-                this.angle = Math.atan2(dy, dx); 
-            } else {
-                // Decay slowly
-                this.active *= 0.9; 
-                this.angle *= 0.9;
+            // Move particles
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Bounce off edges smoothly
+            if (this.x < 0 || this.x > width) { this.vx *= -1; this.baseVx *= -1; }
+            if (this.y < 0 || this.y > height) { this.vy *= -1; this.baseVy *= -1; }
+
+            // Mouse Interaction (Push away slightly)
+            if (mouse.x !== null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < config.mouseRadius) {
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let force = (config.mouseRadius - distance) / config.mouseRadius;
+                    
+                    this.x -= forceDirectionX * force * 2;
+                    this.y -= forceDirectionY * force * 2;
+                }
             }
         }
 
         draw() {
-            ctx.save();
-            ctx.translate(this.x, this.y);
-            
-            // If active, rotate and colorize
-            if (this.active > 0.01) {
-                ctx.rotate(this.angle);
-                ctx.strokeStyle = `rgba(${currentAccent}, ${this.active})`;
-                ctx.lineWidth = 1.5;
-            } else {
-                ctx.strokeStyle = currentBase;
-                ctx.lineWidth = 1;
-            }
-
-            // Draw Cross (+)
-            const s = config.crossSize + (this.active * 2); // Grow slightly when active
             ctx.beginPath();
-            ctx.moveTo(-s, 0); ctx.lineTo(s, 0);
-            ctx.moveTo(0, -s); ctx.lineTo(0, s);
-            ctx.stroke();
-            
-            ctx.restore();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            // Draw colorful dots with low opacity so they don't distract
+            ctx.fillStyle = `rgba(${currentPalette[this.colorIndex]}, 0.6)`;
+            ctx.fill();
         }
     }
 
     function init() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
-        gridPoints = [];
-
-        // Create Grid
-        for (let x = 0; x < width; x += config.gridSpacing) {
-            for (let y = 0; y < height; y += config.gridSpacing) {
-                gridPoints.push(new Point(x, y));
-            }
+        particles = [];
+        
+        for (let i = 0; i < config.particleCount; i++) {
+            particles.push(new Particle());
         }
     }
 
     function animate() {
         ctx.clearRect(0, 0, width, height);
-        gridPoints.forEach(p => {
-            p.update();
-            p.draw();
-        });
+
+        // Update and draw all particles
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+
+            // Connect particles to each other
+            for (let j = i + 1; j < particles.length; j++) {
+                let dx = particles[i].x - particles[j].x;
+                let dy = particles[i].y - particles[j].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < config.connectDistance) {
+                    let opacity = 1 - (distance / config.connectDistance);
+                    ctx.beginPath();
+                    // Lines stay subtle and uniform to keep text readable
+                    ctx.strokeStyle = `rgba(${currentLineColor}, ${opacity * 0.25})`;
+                    ctx.lineWidth = 1;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+
+            // Connect particles to mouse
+            if (mouse.x !== null) {
+                let dx = particles[i].x - mouse.x;
+                let dy = particles[i].y - mouse.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < config.mouseRadius) {
+                    let opacity = 1 - (distance / config.mouseRadius);
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(${currentLineColor}, ${opacity * 0.5})`;
+                    ctx.lineWidth = 1.2;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            }
+        }
+
         requestAnimationFrame(animate);
     }
 
@@ -1332,6 +1447,89 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   ]
 }
+</script>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Stop the default page reload
+
+    const form = e.target;
+    const submitBtn = document.getElementById('submitBtn');
+    const statusBox = document.getElementById('formStatus');
+    
+    // Check if hCaptcha is checked before sending
+    const hcaptchaVal = form.querySelector('[name=h-captcha-response]').value;
+    if (hcaptchaVal === "") {
+        statusBox.style.display = 'block';
+        statusBox.innerText = "Please complete the captcha to prove you are human.";
+        statusBox.style.color = '#ef4444'; 
+        statusBox.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+        return; // Stop the script here
+    }
+
+    const formData = new FormData(form);
+
+    // 🔥 THE FIX: Delete the legacy reCAPTCHA field hCaptcha auto-generates 
+    // so Web3Forms doesn't mistakenly trigger the Pro account block.
+    formData.delete('g-recaptcha-response');
+
+    // Update UI to show loading state
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+    statusBox.style.display = 'none'; // Hide previous messages
+
+    try {
+        // Send the AJAX request to Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        // Handle the JSON response
+        statusBox.style.display = 'block';
+        
+        if (response.status === 200) {
+            // Success State
+            statusBox.innerText = "Your message has been sent successfully!";
+            statusBox.style.color = '#10b981'; 
+            statusBox.style.backgroundColor = 'rgba(16, 185, 129, 0.1)'; 
+            form.reset(); // Clear the form inputs
+            
+            // Reset the hCaptcha widget
+            if (typeof hcaptcha !== 'undefined') {
+                hcaptcha.reset();
+            }
+            
+        } else {
+            // Server Error State
+            console.error("Web3Forms Error:", result);
+            statusBox.innerText = result.message || "Something went wrong.";
+            statusBox.style.color = '#ef4444'; 
+            statusBox.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'; 
+        }
+
+    } catch (error) {
+        // Network Error State
+        console.error('AJAX Error:', error);
+        statusBox.style.display = 'block';
+        statusBox.innerText = 'A network error occurred. Please check your connection and try again.';
+        statusBox.style.color = '#ef4444';
+        statusBox.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+    } finally {
+        // Restore the button state
+        submitBtn.innerText = 'Send Message';
+        submitBtn.disabled = false;
+        
+        // Automatically hide the success message after 5 seconds
+        setTimeout(() => {
+            if (statusBox.style.color === 'rgb(16, 185, 129)') {
+                statusBox.style.display = 'none';
+            }
+        }, 5000);
+    }
+});
 </script>
 
 

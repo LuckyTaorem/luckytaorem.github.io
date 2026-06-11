@@ -1634,15 +1634,17 @@ hr {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+/* ======= Footer ======= */
 #footer {
   background: url("../img/footer-bg.webp") top center no-repeat;
   background-size: cover;
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-  padding: 80px 0;
   position: relative;
+  padding: 60px 0 30px 0;
+  color: #cbd5e1;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 #footer::before {
   content: "";
   position: absolute;
@@ -1650,51 +1652,130 @@ hr {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  /* Dark overlay so the text remains readable over your background image */
+  background: rgba(15, 23, 42, 0.85); 
 }
+
 #footer .container {
   position: relative;
+  z-index: 1; /* Ensures text stays above the background overlay */
 }
-#footer h3 {
-  font-size: 36px;
+
+#footer .footer-top {
+  padding-bottom: 30px;
+}
+
+#footer .footer-info h3 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
   font-weight: 700;
   color: #fff;
+  font-family: "Satisfy", sans-serif;
+  letter-spacing: 1px;
+}
+
+#footer .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  color: #e2e8f0;
+}
+
+#footer .footer-links h4, 
+#footer .footer-social h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
   position: relative;
-  font-family: "Satisfy", serif;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+#footer .footer-links h4::after, 
+#footer .footer-social h4::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--form-button); /* Uses your existing CSS variable */
+  bottom: 0;
+  left: 0;
+}
+
+#footer .footer-links ul {
+  list-style: none;
   padding: 0;
-  margin: 0 0 15px 0;
+  margin: 0;
 }
-#footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 40px 0;
+
+#footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-#footer .social-links {
-  margin: 0 0 40px 0;
+
+#footer .footer-links ul li:first-child { padding-top: 0; }
+
+#footer .footer-links ul a {
+  color: #cbd5e1;
+  transition: 0.3s;
+  text-decoration: none;
 }
+
+#footer .footer-links ul a:hover {
+  color: var(--form-button-hover);
+  transform: translateX(5px);
+}
+
+#footer .footer-links ul i {
+  padding-right: 5px;
+  color: var(--form-button);
+  font-size: 18px;
+}
+
+#footer .footer-social p {
+    color: #e2e8f0;
+}
+
 #footer .social-links a {
   font-size: 18px;
-  display: inline-block;
-  background: var(--form-button);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--form-button); /* Uses your existing CSS variable */
   color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 8px;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   transition: 0.3s;
+  text-decoration: none;
 }
+
 #footer .social-links a:hover {
   background: var(--form-button-hover);
   color: #fff;
-  text-decoration: none;
+  transform: translateY(-3px);
 }
+
 #footer .copyright {
-  margin: 0 0 5px 0;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
 }
-#footer .credits {
-  font-size: 13px;
+
+/* Centers the lines and text on mobile devices */
+@media (max-width: 768px) {
+  #footer .footer-links h4::after, 
+  #footer .footer-social h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #footer .footer-links ul li { justify-content: center; }
 }
