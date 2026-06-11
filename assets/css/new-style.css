@@ -202,6 +202,29 @@ input:checked + .slider .moon { opacity: 0; transform: rotate(90deg); }
   padding: 0 20px;
 }
 
+.typed-text {
+  color: var(--accent-color, #00f3ff); /* Use your theme's cyan accent */
+  font-weight: 700;
+  border-right: 3px solid rgba(0, 243, 255, 0.5); /* A blinking cursor feel */
+  background: rgba(0, 243, 255, 0.1);
+  padding-right: 5px;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.3); /* Soft neon glow */
+}
+
+.hero-container h1 {
+  font-size: 4rem;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #fff, #00f3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Optional: Subtle animation for the whole heading */
+.hero-container h2 {
+  min-height: 1.2em; /* Prevents text from jumping when content changes */
+  animation: fadeIn 1s ease-in-out;
+}
+
 /* --- 1. STATUS BADGE --- */
 .hero-badge {
   display: inline-flex;
@@ -252,7 +275,6 @@ input:checked + .slider .moon { opacity: 0; transform: rotate(90deg); }
   padding-right: 5px;
   animation: blink 0.75s step-end infinite;
 }
-
 /* --- 4. BUTTONS --- */
 .hero-actions {
   display: flex;
