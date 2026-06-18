@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </section> -->
 
 
-    <!-- <hr>
+    <!-- <hr>-->
 <section id="blogs" class="container">
       <div class="section-title">
         <span>Latest from the Blog</span>
@@ -501,58 +501,90 @@ document.addEventListener("DOMContentLoaded", function() {
     <p>Code insights, anime deep-dives, and creative experiments — fresh and waiting for you.</p>
   </div>
 
-  <div class="row" id="blog-teasers"> -->
-    <!-- Dynamically injected posts will appear here -->
-    <!--
-  </div>
+  <div class="row g-4" id="blog-teasers">
+      <div class="col-12 text-center my-5" id="blog-loading">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-3" style="color: var(--text-color);">Loading latest articles...</p>
+      </div>
+    </div>
 
-  <div class="text-center mt-4">
-    <a href="https://blogs.taoremtls.in/" class="btn btn-dark">
-      🔗 Visit Full Blog
-    </a>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="[https://luckytaorem.github.io/blog/](https://luckytaorem.github.io/blog/)" class="btn btn-primary px-4 py-2 rounded-pill fw-bold">
+        View All Articles
+      </a>
+    </div>
   </div>
+</section>
   
 <script>
-    let preloadedBlogData;
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById("blog-teasers");
+    const loading = document.getElementById("blog-loading");
     
-  fetch("https://blogs.taoremtls.in/wp-json/wp/v2/posts?per_page=3&_embed")
-    .then(res => res.json())
-    .then(posts => {
-        preloadedBlogData = posts;
-      renderBlogCards(posts);
-    });
-    
-      function renderBlogCards(posts) {
-          const container = document.getElementById("blog-teasers");
-  if (!container) return;
-      posts.forEach(post => {
-        const title = post.title.rendered;
-        const excerpt = post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "").slice(0, 60) + "...";
+    // Hugo automatically generates an RSS feed at this URL
+    const rssUrl = "[https://luckytaorem.github.io/blog/posts/index.xml](https://luckytaorem.github.io/blog/posts/index.xml)";
 
-        const media = post._embedded?.["wp:featuredmedia"]?.[0];
-        const imageURL = media?.media_details?.sizes?.medium_large?.source_url
-                      || media?.media_details?.sizes?.full?.source_url;
-                      
-        const altText = media?.alt_text || title;
+    fetch(rssUrl)
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.text();
+      })
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        const items = data.querySelectorAll("item");
+        loading.style.display = "none"; // Hide the loader
+        
+        // Limit to exactly 6 posts
+        const maxPosts = Math.min(items.length, 6);
+        
+        for (let i = 0; i < maxPosts; i++) {
+          const el = items[i];
+          const title = el.querySelector("title")?.textContent || "Untitled Article";
+          const link = el.querySelector("link")?.textContent || "#";
+          
+          // Extract description and strip out any raw HTML tags
+          let description = el.querySelector("description")?.textContent || "";
+          const plainTextDesc = description.replace(/(<([^>]+)>)/gi, "").substring(0, 110) + "...";
 
-        const card = `
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <a href="${post.link}" target="_blank"><img src="${imageURL}" alt="${altText}" class="card-img-top" style="height: 250px;"></a>
-              <div class="card-body">
-                <h5 class="card-title">${title}</h5>
-                <p class="card-text">${excerpt}</p>
-                <a href="${post.link}" target="_blank" class="btn btn-primary">Read More</a>
+          // Attempt to extract an image from the RSS description
+          // If Hugo's RSS doesn't include the image, it uses a styled fallback
+          let imageSrc = "[https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article](https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article)"; 
+          const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
+          if (imgMatch && imgMatch[1]) {
+              imageSrc = imgMatch[1];
+          }
+
+          // Calculate delay for AOS animation (100, 200, 300)
+          let delay = ((i % 3) + 1) * 100;
+
+          const cardHTML = `
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="${delay}">
+              <div class="card h-100 shadow-sm border-0" style="background: var(--bg-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <a href="${link}" target="_blank" style="display: block; overflow: hidden;">
+                  <img src="${imageSrc}" class="card-img-top w-100" alt="${title}" style="height: 220px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+                <div class="card-body d-flex flex-column p-4">
+                  <h5 class="card-title fw-bold mb-3" style="font-size: 1.15rem; line-height: 1.4;">
+                    <a href="${link}" target="_blank" style="color: var(--text-color); text-decoration: none;">${title}</a>
+                  </h5>
+                  <p class="card-text mb-4" style="font-size: 0.95rem; color: #888;">${plainTextDesc}</p>
+                  <div class="mt-auto">
+                    <a href="${link}" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4 py-2 fw-semibold">Read More</a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-        container.insertAdjacentHTML("beforeend", card);
+          `;
+          container.insertAdjacentHTML("beforeend", cardHTML);
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching Hugo RSS:", error);
+        loading.innerHTML = `<p class="text-danger fw-bold">Unable to load the latest articles at this time.</p>`;
       });
-    }
+  });
 </script>
-</section> -->
-    <!-- <hr> -->
+<hr>
 
     <section id="internship-main" class="internship-main">
       <div class="container">
