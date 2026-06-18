@@ -546,42 +546,35 @@ document.addEventListener("DOMContentLoaded", function() {
           
           // Extract description and strip out any raw HTML tags
           let description = el.querySelector("description")?.textContent || "";
-          
-          // Remove HTML tags and hidden HTML spaces
           let cleanText = description.replace(/(<([^>]+)>)/gi, "").replace(/&nbsp;/gi, " ");
           
-          // 1. CRITICAL: Trim first to destroy any invisible spaces or newlines at the start
           cleanText = cleanText.trim();
-          
-          // 2. The Nuke: Deletes "Introduction [Topic] -->" 
-          // ([\s\S]*? guarantees it eats through newlines until it hits the arrow)
           cleanText = cleanText.replace(/^Introduction[\s\S]*?(?:-->|->|==>|=>|&gt;|>|:|—|–|-)\s*/i, "");
-          
-          // 3. Fallback: Deletes the word "Introduction" if there is no arrow
           cleanText = cleanText.replace(/^Introduction\s*/i, "");
-          
-          // 4. Final Trim to guarantee it is flush left
           cleanText = cleanText.trim();
           
-          // Truncate to 110 characters
           const plainTextDesc = cleanText.substring(0, 110) + "...";
 
-          // Attempt to extract an image from the RSS description
-          // If Hugo's RSS doesn't include the image, it uses a styled fallback
-          let imageSrc = "https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article"; 
-          const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
-          if (imgMatch && imgMatch[1]) {
-              imageSrc = imgMatch[1];
-          }
+          // --- SMART IMAGE EXTRACTOR ---
+          // 1. Get the URL slug (e.g., "my-article-name")
+          const cleanLink = link.replace(/\/$/, ""); // Remove trailing slash if present
+          const slug = cleanLink.substring(cleanLink.lastIndexOf('/') + 1);
+          
+          // 2. Build the image path based on your folder structure
+          const imageSrc = `https://luckytaorem.github.io/blog/images/${slug}.jpg`;
+          
+          // 3. Keep the placeholder ready just in case the real image is missing
+          const fallbackImage = "https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article";
 
           // Calculate delay for AOS animation (100, 200, 300)
           let delay = ((i % 3) + 1) * 100;
 
+          // Added onerror handler to the img tag to catch missing images
           const cardHTML = `
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="${delay}">
               <div class="card h-100 shadow-sm border-0" style="background: var(--bg-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <a href="${link}" target="_blank" style="display: block; overflow: hidden;">
-                  <img src="${imageSrc}" class="card-img-top w-100" alt="${title}" style="height: 220px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  <img src="${imageSrc}" onerror="this.onerror=null;this.src='${fallbackImage}';" class="card-img-top w-100" alt="${title}" style="height: 220px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
                 <div class="card-body d-flex flex-column p-4">
                   <h5 class="card-title fw-bold mb-3" style="font-size: 1.15rem; line-height: 1.4;">
