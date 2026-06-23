@@ -546,8 +546,6 @@ async function handleSendMessage() {
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-          // 3. NO DELAY - Happens instantly!
-          chatWindow.classList.add("hidden"); 
           targetSection.scrollIntoView({ behavior: 'smooth' }); 
         }
       }
@@ -573,26 +571,28 @@ messagesContainer.addEventListener("click", (e) => {
 
   const href = link.getAttribute("href");
 
-  // Define your main navigation sections again here
-  const mainNavSections = [
-    "#hero", "#about", "#resume", "#blogs", 
-    "#internship-main", "#project", "#github", 
-    "#certificate", "#contact"
-  ];
-
   if (href && href.startsWith("#")) {
     e.preventDefault(); 
-    
-    // Only close the chat window if it's a main navigation link
-    if (mainNavSections.includes(href)) {
-      chatWindow.classList.add("hidden");
-    }
 
-    // Always smoothly scroll to the section (whether the chat closed or not)
+    // Smoothly scroll to the section, but leave the chat open
     const targetSection = document.querySelector(href);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+});
+
+// Close chat window when clicking outside of it
+document.addEventListener("click", (e) => {
+  // Check if the chat is currently open
+  if (!chatWindow.classList.contains("hidden")) {
+    
+    // Check if the click happened OUTSIDE the chat window 
+    // AND OUTSIDE the chat button (so clicking the button doesn't instantly close it)
+    if (!chatWindow.contains(e.target) && !chatBtn.contains(e.target)) {
+      chatWindow.classList.add("hidden");
+    }
+    
   }
 });
 
