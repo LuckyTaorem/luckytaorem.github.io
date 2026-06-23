@@ -264,7 +264,8 @@
                 <p>I was responsible for performing comprehensive SEO tasks aimed at improving the client's online
                   visibility. My role involved conducting detailed site audits to identify and resolve on-site issues,
                   optimizing content and metadata for on-page SEO, and implementing off-page SEO strategies such as
-                  backlink generation and outreach. <br><br> I also focused on technical SEO enhancements, including site speed
+                  backlink generation and outreach. <br><br> I also focused on technical SEO enhancements, including
+                  site speed
                   optimization, structured data implementation, and ensuring proper indexing through sitemap and
                   robots.txt configuration.<br><br> Additionally, I conducted competitor analysis to identify growth
                   opportunities, performed keyword research using various tools, and supported local SEO efforts by
@@ -280,10 +281,12 @@
                 <p>As a WordPress Developer at ForceFriction, I was responsible for managing and maintaining the
                   company’s WordPress-based digital infrastructure. My role included ensuring website performance and
                   uptime, optimizing user experience across devices, and implementing custom design and functionality
-                  using Elementor and custom code. <br><br>A major focus of the internship involved integrating international
+                  using Elementor and custom code. <br><br>A major focus of the internship involved integrating
+                  international
                   payment gateways such as PayPal and Razorpay to ensure seamless global transactions. I troubleshot
                   compatibility issues, implemented secure checkout flows, and configured regional settings to support
-                  inclusive pricing and currency display. <br><br>Additionally, I contributed to plugin audits, performance
+                  inclusive pricing and currency display. <br><br>Additionally, I contributed to plugin audits,
+                  performance
                   tuning, schema enhancements, and SEO-ready metadata strategy to boost discoverability. Through this
                   hands-on experience, I enhanced my skills in WordPress development, international e-commerce
                   workflows, and user-centric design.</p>
@@ -336,7 +339,8 @@
               <div class="resume-item">
                 <h4>Auto Filler & Bulk URL Opener Extension</h4>
                 <p><em>Auto Filler & Bulk URL Opener is a powerful Chrome and Edge extension designed to boost
-                    productivity for web users and SEO professionals. <br><br>It automates form filling, opens multiple websites
+                    productivity for web users and SEO professionals. <br><br>It automates form filling, opens multiple
+                    websites
                     with a single click, checks the indexing status of bulk URLs, and extracts URLs from all open tabs
                     instantly.</em></p>
               </div>
@@ -344,7 +348,8 @@
               <div class="resume-item">
                 <h4>Interactive JSON-Based Story Teller with Voice Narration</h4>
                 <p><em>Story Teller is a web-based storytelling platform that delivers interactive stories stored in
-                    JSON format. <br><br>Built using HTML, CSS, and JavaScript, the project allows users to experience dynamic
+                    JSON format. <br><br>Built using HTML, CSS, and JavaScript, the project allows users to experience
+                    dynamic
                     narratives that unfold through a combination of structured story data and user interactions.</em>
                 </p>
               </div>
@@ -352,7 +357,8 @@
               <div class="resume-item">
                 <h4>Interactive India Weather & Population Map</h4>
                 <p><em>This is an interactive web-based India map application that integrates real-time weather data and
-                    population-based visual analytics. <br><br>Built using HTML, CSS, JavaScript, and SVG, the map allows users
+                    population-based visual analytics. <br><br>Built using HTML, CSS, JavaScript, and SVG, the map
+                    allows users
                     to click on any Indian state to instantly view its current weather conditions, temperature, and a
                     detailed multi-day weather forecast displayed below the map interface.</em></p>
               </div>
@@ -408,6 +414,9 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const productGrid = document.getElementById('product-grid');
+    if (productGrid) {
+    productGrid.innerHTML = 'Your HTML content here';
+}
     const productsApiUrl = 'https://shop.taoremtls.in/wp-json/wc/store/v1/products?per_page=4&orderby=date&order=desc';
     const geoApiUrl = 'https://get.geojs.io/v1/ip/country.json'; // Free, HTTPS-friendly Geo API
 
@@ -493,36 +502,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     <!-- <hr>-->
-<section id="blogs" class="container">
+    <section id="blogs" class="container">
       <div class="section-title">
         <span>Latest from the Blog</span>
         <h2>Latest from the Blog</h2>
-        </div>
-          
-  <div class="section-title text-center">
-    <p>Explore my latest deep-dives into Artificial Intelligence, software development, and tomorrow's tech breakthroughs.</p>
-  </div>
-
-  <div class="row g-4" id="blog-teasers">
-      <div class="col-12 text-center my-5" id="blog-loading">
-        <div class="spinner-border text-primary" role="status"></div>
-        <p class="mt-3" style="color: var(--text-color);">Loading latest articles...</p>
       </div>
-    </div>
 
-    <div class="text-center mt-5" data-aos="fade-up">
-      <a href="https://luckytaorem.github.io/blog/" class="btn btn-primary px-4 py-2 rounded-pill fw-bold">
-        View All Articles
-      </a>
-    </div>
-  </div>
-</section>
-  
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+      <div class="section-title text-center">
+        <p>Explore my latest deep-dives into Artificial Intelligence, software development, and tomorrow's tech
+          breakthroughs.</p>
+      </div>
+
+      <div class="row g-4" id="blog-teasers">
+        <div class="col-12 text-center my-5" id="blog-loading">
+          <div class="spinner-border text-primary" role="status"></div>
+          <p class="mt-3" style="color: var(--text-color);">Loading latest articles...</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="https://luckytaorem.github.io/blog/" class="btn btn-primary px-4 py-2 rounded-pill fw-bold">
+          View All Articles
+        </a>
+      </div>
+      </div>
+    </section>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("blog-teasers");
     const loading = document.getElementById("blog-loading");
-    
+
     // Hugo automatically generates an RSS feed at this URL
     const rssUrl = "https://luckytaorem.github.io/blog/posts/index.xml";
 
@@ -535,41 +545,37 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(data => {
         const items = data.querySelectorAll("item");
         loading.style.display = "none"; // Hide the loader
-        
+
         // Limit to exactly 6 posts
         const maxPosts = Math.min(items.length, 6);
-        
+
         for (let i = 0; i < maxPosts; i++) {
           const el = items[i];
           const title = el.querySelector("title")?.textContent || "Untitled Article";
           const link = el.querySelector("link")?.textContent || "#";
-          
+
           // Extract description and strip out any raw HTML tags
           let description = el.querySelector("description")?.textContent || "";
           let cleanText = description.replace(/(<([^>]+)>)/gi, "").replace(/&nbsp;/gi, " ");
-          
+
           cleanText = cleanText.trim();
+          
+          // FIXED: Removed the bad spaces injected by the formatter
           cleanText = cleanText.replace(/^Introduction[\s\S]*?(?:-->|->|==>|=>|&gt;|>|:|—|–|-)\s*/i, "");
           cleanText = cleanText.replace(/^Introduction\s*/i, "");
           cleanText = cleanText.trim();
-          
+
           const plainTextDesc = cleanText.substring(0, 110) + "...";
 
           // --- SMART IMAGE EXTRACTOR ---
-          // 1. Get the URL slug (e.g., "my-article-name")
-          const cleanLink = link.replace(/\/$/, ""); // Remove trailing slash if present
+          const cleanLink = link.replace(/\/$/, ""); 
           const slug = cleanLink.substring(cleanLink.lastIndexOf('/') + 1);
-          
-          // 2. Build the image path based on your folder structure
           const imageSrc = `https://luckytaorem.github.io/blog/images/${slug}.jpg`;
-          
-          // 3. Keep the placeholder ready just in case the real image is missing
           const fallbackImage = "https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article";
 
           // Calculate delay for AOS animation (100, 200, 300)
           let delay = ((i % 3) + 1) * 100;
 
-          // Added onerror handler to the img tag to catch missing images
           const cardHTML = `
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="${delay}">
               <div class="card h-100 shadow-sm border-0" style="background: var(--bg-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -597,7 +603,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 </script>
-<hr>
+    <hr>
 
     <section id="internship-main" class="internship-main">
       <div class="container">
@@ -815,7 +821,8 @@ document.addEventListener("DOMContentLoaded", function() {
             </a>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+            data-aos-delay="300">
             <a href="http://majorproject.epizy.com" target="_blank">
               <div class="icon-box">
                 <div><img src="assets/img/majorproject.webp" style="width:100%; height:60%;"
@@ -829,7 +836,8 @@ document.addEventListener("DOMContentLoaded", function() {
             </a>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+            data-aos-delay="100">
             <a href="http://eprogram.luckytaorem.epizy.com/" target="_blank">
               <div class="icon-box">
                 <div><img src="assets/img/elearning.webp" style="width:100%; height:60%;"
@@ -843,7 +851,8 @@ document.addEventListener("DOMContentLoaded", function() {
             </a>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+            data-aos-delay="200">
             <a href="http://wordpress.luckytaorem.epizy.com" target="_blank">
               <div class="icon-box">
                 <div><img src="assets/img/wordpress.webp" style="width:100%; height:60%;"
@@ -940,7 +949,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <script>
       // --- CONFIGURATION ---
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbz61J3PTaVTn_psy9BtqeTyLWAq0QcbTq8dtONZNo6V3zQvbgpV6pYnAx1rECIR4Ns0fA/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbz21ELFx5cgchi3FL0D3tApHphRKk9AEvyuAZ6iSb-lm70vK87GU-PIW13N2FaFK-kiPw/exec';
       const itemsPerPage = 6;
 
       // --- STATE VARIABLES ---

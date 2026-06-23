@@ -440,7 +440,7 @@ if (currentTheme) {
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("gameContainer");
 
-  fetch("https://taoremtls.in/index-games.json")
+  fetch("https://luckytaorem.github.io/index-games.json")
     .then(res => res.json())
     .then(data => {
       const allGames = data?.segments?.[0]?.hits || [];
@@ -498,38 +498,103 @@ document.addEventListener("DOMContentLoaded", () => {
   chatBtn.addEventListener("click", () => chatWindow.classList.toggle("hidden"));
   closeBtn.addEventListener("click", () => chatWindow.classList.add("hidden"));
 
-  async function handleSendMessage() {
-    const text = chatInput.value.trim();
-    if (!text) return;
+async function handleSendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
 
-    addMessage(text, "user-msg");
-    chatInput.value = "";
-    const typingId = addMessage("Typing...", "bot-msg", true);
+  addMessage(text, "user-msg");
+  chatInput.value = "";
+  const typingId = addMessage("Typing...", "bot-msg", true);
 
-    try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text })
-      });
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text })
+    });
 
-      if (!response.ok) throw new Error("Server error");
-      const data = await response.json();
+    if (!response.ok) throw new Error("Server error");
+    const data = await response.json();
+    
+    document.getElementById(typingId).remove();
+    
+    // Format and display the AI's reply
+    const formattedReply = formatBotText(data.reply);
+    addMessage(formattedReply, "bot-msg");
+
+    // ==========================================
+    // NEW AUTO-SCROLL LOGIC
+    // ==========================================
+    // Scan the formatted reply to see if it contains an internal link (href="#something")
+    // ==========================================
+    // NEW AUTO-SCROLL LOGIC (Instant & Restricted)
+    // ==========================================
+    const internalLinkMatch = formattedReply.match(/href="(#[a-zA-Z0-9_-]+)"/);
+    
+    if (internalLinkMatch) {
+      const targetId = internalLinkMatch[1]; 
       
-      document.getElementById(typingId).remove();
-      const formattedReply = formatBotText(data.reply);
-      addMessage(formattedReply, "bot-msg");
+      // 1. Define ONLY your main navigation sections
+      const mainNavSections = [
+        "#hero", "#about", "#resume", "#blogs", 
+        "#internship-main", "#project", "#github", 
+        "#certificate", "#contact"
+      ];
 
-    } catch (error) {
-      document.getElementById(typingId).remove();
-      addMessage("Server is waking up or offline. Please try again later!", "bot-msg");
+      // 2. Check if the link is actually in your main nav
+      if (mainNavSections.includes(targetId)) {
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          // 3. NO DELAY - Happens instantly!
+          chatWindow.classList.add("hidden"); 
+          targetSection.scrollIntoView({ behavior: 'smooth' }); 
+        }
+      }
     }
+    // ==========================================
+    // ==========================================
+
+  } catch (error) {
+    document.getElementById(typingId).remove();
+    addMessage("Server is waking up or offline. Please try again later!", "bot-msg");
   }
+}
 
   sendBtn.addEventListener("click", handleSendMessage);
   chatInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleSendMessage();
   });
+
+// Listen for clicks on ANY link inside the chat window
+messagesContainer.addEventListener("click", (e) => {
+  const link = e.target.closest("a"); 
+  if (!link) return; 
+
+  const href = link.getAttribute("href");
+
+  // Define your main navigation sections again here
+  const mainNavSections = [
+    "#hero", "#about", "#resume", "#blogs", 
+    "#internship-main", "#project", "#github", 
+    "#certificate", "#contact"
+  ];
+
+  if (href && href.startsWith("#")) {
+    e.preventDefault(); 
+    
+    // Only close the chat window if it's a main navigation link
+    if (mainNavSections.includes(href)) {
+      chatWindow.classList.add("hidden");
+    }
+
+    // Always smoothly scroll to the section (whether the chat closed or not)
+    const targetSection = document.querySelector(href);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
 
   function addMessage(text, className, isTyping = false) {
     const msgDiv = document.createElement("div");
@@ -624,39 +689,33 @@ function openGameWindow(url) {
 }
 
 function formatBotText(text) {
-  // 1. Detect and format standard URLs and Social Links
-  const urlRegex = /(https?:\/\/[^\s()]+)|((?:www\.)?(?:linkedin\.com|github\.com|facebook\.com|instagram\.com|x\.com|twitter\.com)[^\s()]*)/gi;
-  
-  let formattedText = text.replace(urlRegex, function(url) {
-    let href = url;
-    if (!href.match(/^https?:\/\//i)) {
-      href = 'https://' + href;
-    }
-    href = href.replace(/[.,;:]$/, '');
-    let display = url.replace(/[.,;:]$/, '');
-    
-    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${display}</a>`;
-  });
+  // 0. Catch stubborn AI Markdown links like [Check out my Blogs](#blogs)
+  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let formattedText = text.replace(markdownLinkRegex, '<a href="$2">$1</a>');
 
-  // 2. Detect and format Email Addresses (mailto:)
-  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
+  // 1. Detect standard URLs and Social Links...
+  const urlRegex = /(?<!href="|href=')(https?:\/\/[^\s()<>]+|((?:www\.)?(?:linkedin\.com|github\.com|facebook\.com|instagram\.com|x\.com|twitter\.com)[^\s()<>]*))/gi;
+
+  // 2. Detect Email Addresses (ignore if already in a mailto tag)
+  const emailRegex = /(?<!mailto:|">)([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)(?!<\/a>)/gi;
   
   formattedText = formattedText.replace(emailRegex, function(email) {
-    // Clean up any trailing punctuation just in case
     let cleanEmail = email.replace(/[.,;:]$/, ''); 
-    // Wrap in a mailto: link
     return `<a href="mailto:${cleanEmail}">${cleanEmail}</a>`;
   });
 
-  // 3. NEW: Detect internal portfolio links (e.g., #contact, #hero)
-  // This looks for a hashtag followed by letters/hyphens
-  const anchorRegex = /(#[a-zA-Z0-9_-]+)/g;
+  // 3. Detect stray internal links like #contact (ignore if already in an HTML tag)
+  const anchorRegex = /(?<!href="|href=')(#[a-zA-Z0-9_-]+)/g;
   
   formattedText = formattedText.replace(anchorRegex, function(anchor) {
     let cleanAnchor = anchor.replace(/[.,;:]$/, ''); 
-    // Uses the "scrollto" class so it smoothly scrolls down your page!
-    return `<a href="${cleanAnchor}" class="scrollto" onclick="document.querySelector('${cleanAnchor}').scrollIntoView({behavior: 'smooth'}); return false;">${cleanAnchor}</a>`;
+    // Just return a clean anchor tag. The Event Listener below will handle the scrolling!
+    return `<a href="${cleanAnchor}">${cleanAnchor}</a>`;
   });
+
+  // 4. Handle standard AI markdown (bold text and line breaks)
+  formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  formattedText = formattedText.replace(/\n/g, '<br>');
 
   return formattedText;
 }
