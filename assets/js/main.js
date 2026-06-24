@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesContainer = document.getElementById("chat-messages");
 
   // 👉 REPLACE THIS WITH YOUR RENDER URL (Keep the /chat at the end)
-  const API_URL = "https://portfolio-chatbot-583v.onrender.com/chat";
+  const API_URL = "https://portfolio-chatbot-pi-lime.vercel.app/chat";
 
   chatBtn.addEventListener("click", () => chatWindow.classList.toggle("hidden"));
   closeBtn.addEventListener("click", () => chatWindow.classList.add("hidden"));
