@@ -495,7 +495,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // 👉 REPLACE THIS WITH YOUR RENDER URL (Keep the /chat at the end)
   const API_URL = "https://portfolio-chatbot-pi-lime.vercel.app/chat";
 
-  chatBtn.addEventListener("click", () => chatWindow.classList.toggle("hidden"));
+  chatBtn.addEventListener("click", () => {
+  // Toggle the chat window visibility
+  chatWindow.classList.toggle("hidden");
+
+  // If the chat window is now open (meaning it doesn't have the 'hidden' class)
+  if (!chatWindow.classList.contains("hidden")) {
+    // We use a slight delay (100ms) to ensure the DOM has fully rendered the visible 
+    // chat window before trying to focus. Otherwise, the browser might ignore it.
+    setTimeout(() => {
+      chatInput.focus();
+    }, 100);
+  }
+});
   closeBtn.addEventListener("click", () => chatWindow.classList.add("hidden"));
 
 async function handleSendMessage() {
@@ -571,15 +583,28 @@ messagesContainer.addEventListener("click", (e) => {
 
   const href = link.getAttribute("href");
 
+  // Only intercept links that start with # (internal navigation)
   if (href && href.startsWith("#")) {
     e.preventDefault(); 
-
-    // Smoothly scroll to the section, but leave the chat open
     const targetSection = document.querySelector(href);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  // If it's the PDF link, the browser will just handle the download natively!
+});
+
+const quickReplyBtns = document.querySelectorAll(".quick-reply-btn");
+
+quickReplyBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Just send the text to the AI
+    chatInput.value = btn.innerText;
+    handleSendMessage();
+    
+    // Hide quick replies after clicking
+    document.getElementById("quick-replies").style.display = "none"; 
+  });
 });
 
 // Close chat window when clicking outside of it
@@ -596,15 +621,42 @@ document.addEventListener("click", (e) => {
   }
 });
 
-  function addMessage(text, className, isTyping = false) {
-    const msgDiv = document.createElement("div");
-    msgDiv.className = `msg ${className}`;
+const clearBtn = document.getElementById("clear-chat-btn");
+
+clearBtn.addEventListener("click", () => {
+  // Clear all messages
+  messagesContainer.innerHTML = "";
+  
+  // Bring back the initial greeting
+  addMessage("Hi! I'm trained on Lucky's resume. Ask me about his tech stack, WordPress experience, or projects!", "bot-msg");
+  
+  // Bring back the quick replies if you hid them earlier
+  const quickReplies = document.getElementById("quick-replies");
+  if (quickReplies) quickReplies.style.display = "flex";
+});
+
+function addMessage(text, className, isTyping = false) {
+  const msgDiv = document.createElement("div");
+  msgDiv.className = `msg ${className}`;
+  
+  if (isTyping) {
+    msgDiv.id = "typing-indicator";
+    // Inject the animated dots HTML instead of text
+    msgDiv.innerHTML = `<div class="typing-dots"><span></span><span></span><span></span></div>`;
+  } else {
     msgDiv.innerHTML = text;
-    if (isTyping) msgDiv.id = "typing-indicator";
-    messagesContainer.appendChild(msgDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    return msgDiv.id;
   }
+  
+  messagesContainer.appendChild(msgDiv);
+  
+  // Smooth scrolling instead of instant jumping
+  messagesContainer.scrollTo({
+    top: messagesContainer.scrollHeight,
+    behavior: 'smooth'
+  });
+  
+  return msgDiv.id;
+}
 });
 
 function openGameWindow(url) {

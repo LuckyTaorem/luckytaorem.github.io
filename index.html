@@ -1646,13 +1646,24 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
         </div>
 
-        <button id="close-chat-btn" aria-label="Close chat">
-          <i class="bi bi-x-lg"></i>
-        </button>
+        <div class="chat-header-actions">
+          <button id="clear-chat-btn" aria-label="Clear chat" style="background:none; border:none; color:inherit; cursor:pointer; margin-right: 10px;">
+            <i class="bi bi-trash"></i>
+          </button>
+          <button id="close-chat-btn" aria-label="Close chat" style="background:none; border:none; color:inherit; cursor:pointer;">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
       </div>
 
       <div id="chat-messages" class="chat-messages">
         <div class="msg bot-msg">Hi! I'm trained on Lucky's resume. Ask me about his tech stack, WordPress experience, or projects!</div>
+      </div>
+
+      <div id="quick-replies" class="quick-replies">
+        <button class="quick-reply-btn">What's your tech stack?</button>
+        <button class="quick-reply-btn">Show me your projects</button>
+        <button class="quick-reply-btn">Download resume</button>
       </div>
 
       <div class="chat-input-area">
