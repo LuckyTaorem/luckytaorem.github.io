@@ -663,7 +663,7 @@ document.addEventListener("DOMContentLoaded", function() {
               </div>
               <div class="col-md-9">
                 <h3>WordPress Developer at <strong>Force Friction AI</strong></h3>
-                <p><strong>Duration:</strong> June 5, 2025 - Present</p>
+                <p><strong>Duration:</strong> June 5, 2025 - July 16, 2026</p>
                 <p><strong>Location:</strong> Remote Internship</p>
 
                 <h4><b>Key Responsibilities</b></h4>
@@ -1647,12 +1647,21 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
 
         <div class="chat-header-actions">
-          <button id="clear-chat-btn" aria-label="Clear chat" style="background:none; border:none; color:inherit; cursor:pointer; margin-right: 10px;">
-            <i class="bi bi-trash"></i>
-          </button>
-          <button id="close-chat-btn" aria-label="Close chat" style="background:none; border:none; color:inherit; cursor:pointer;">
-            <i class="bi bi-x-lg"></i>
-          </button>
+          <div class="header-dropdown-container">
+            <button id="header-menu-btn" aria-label="Menu">
+              <i class="bi bi-three-dots"></i>
+            </button>
+            
+            <div id="header-dropdown-menu" class="header-dropdown-menu">
+              <button id="clear-chat-btn" class="dropdown-item">
+                <i class="bi bi-trash"></i> <span>Clear Chat</span>
+              </button>
+              
+              <button id="menu-close-btn" class="dropdown-item">
+                <i class="bi bi-x-lg"></i> <span>Close Chat</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1660,15 +1669,27 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="msg bot-msg">Hi! I'm trained on Lucky's resume. Ask me about his tech stack, WordPress experience, or projects!</div>
       </div>
 
-      <div id="quick-replies" class="quick-replies">
+      <div id="quick-replies-popout" class="quick-replies-popout hidden-popout">
         <button class="quick-reply-btn">What's your tech stack?</button>
         <button class="quick-reply-btn">Show me your projects</button>
         <button class="quick-reply-btn">Download resume</button>
+        
+        <button class="quick-reply-btn">What is your WordPress experience?</button>
+        <button class="quick-reply-btn">Tell me about your AI projects</button>
+        
+        <button class="quick-reply-btn">How can I contact you?</button>
+        
+        <button class="quick-reply-btn">What are your hobbies?</button>
       </div>
 
       <div class="chat-input-area">
+        <button id="toggle-suggestions-btn" aria-label="View suggestions" title="Suggested Questions">
+          <i class="bi bi-stars" id="suggestion-icon"></i>
+        </button>
         <input type="text" id="chat-input" placeholder="Ask anything..." autocomplete="off">
-        <button id="send-chat-btn"><i class="bi bi-send-fill"></i></button>
+        <button id="send-chat-btn" aria-label="Send message">
+          <i class="bi bi-send-fill"></i>
+        </button>
       </div>
     </div>
   </div>

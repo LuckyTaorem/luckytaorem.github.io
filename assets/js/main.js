@@ -487,7 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const chatBtn = document.getElementById("ai-chat-btn");
   const chatWindow = document.getElementById("ai-chat-window");
-  const closeBtn = document.getElementById("close-chat-btn");
   const chatInput = document.getElementById("chat-input");
   const sendBtn = document.getElementById("send-chat-btn");
   const messagesContainer = document.getElementById("chat-messages");
@@ -508,157 +507,230 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   }
 });
-  closeBtn.addEventListener("click", () => chatWindow.classList.add("hidden"));
 
-async function handleSendMessage() {
-  const text = chatInput.value.trim();
-  if (!text) return;
+const toggleSuggestionsBtn = document.getElementById("toggle-suggestions-btn");
+  const suggestionsPopout = document.getElementById("quick-replies-popout"); // Matches your HTML ID
+  const suggestionIcon = document.getElementById("suggestion-icon");
+  const quickReplyBtns = document.querySelectorAll(".quick-reply-btn");
 
-  addMessage(text, "user-msg");
-  chatInput.value = "";
-  const typingId = addMessage("Typing...", "bot-msg", true);
+  // Helper function to close the menu
+  function closeSuggestions() {
+    suggestionsPopout.classList.add("hidden-popout"); // Adds the hidden class
+    toggleSuggestionsBtn.classList.remove("open");
+    if (suggestionIcon) {
+      suggestionIcon.className = "bi bi-stars"; // Reset back to stars
+    }
+  }
 
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: text })
-    });
+  async function handleSendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
 
-    if (!response.ok) throw new Error("Server error");
-    const data = await response.json();
-    
-    document.getElementById(typingId).remove();
-    
-    // Format and display the AI's reply
-    const formattedReply = formatBotText(data.reply);
-    addMessage(formattedReply, "bot-msg");
+    // Hide suggestions menu as soon as a message is sent
+    closeSuggestions();
 
-    // ==========================================
-    // NEW AUTO-SCROLL LOGIC
-    // ==========================================
-    // Scan the formatted reply to see if it contains an internal link (href="#something")
-    // ==========================================
-    // NEW AUTO-SCROLL LOGIC (Instant & Restricted)
-    // ==========================================
-    const internalLinkMatch = formattedReply.match(/href="(#[a-zA-Z0-9_-]+)"/);
-    
-    if (internalLinkMatch) {
-      const targetId = internalLinkMatch[1]; 
+    addMessage(text, "user-msg");
+    chatInput.value = "";
+    const typingId = addMessage("Typing...", "bot-msg", true);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+
+      if (!response.ok) throw new Error("Server error");
+      const data = await response.json();
       
-      // 1. Define ONLY your main navigation sections
-      const mainNavSections = [
-        "#hero", "#about", "#resume", "#blogs", 
-        "#internship-main", "#project", "#github", 
-        "#certificate", "#contact"
-      ];
+      document.getElementById(typingId).remove();
+      
+      // Format and display the AI's reply
+      const formattedReply = formatBotText(data.reply);
+      addMessage(formattedReply, "bot-msg");
 
-      // 2. Check if the link is actually in your main nav
-      if (mainNavSections.includes(targetId)) {
-        const targetSection = document.querySelector(targetId);
+      // ==========================================
+      // NEW AUTO-SCROLL LOGIC (Instant & Restricted)
+      // ==========================================
+      const internalLinkMatch = formattedReply.match(/href="(#[a-zA-Z0-9_-]+)"/);
+      
+      if (internalLinkMatch) {
+        const targetId = internalLinkMatch[1]; 
+        
+        // 1. Define ONLY your main navigation sections
+        const mainNavSections = [
+          "#hero", "#about", "#resume", "#blogs", 
+          "#internship-main", "#project", "#github", 
+          "#certificate", "#contact"
+        ];
 
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' }); 
+        // 2. Check if the link is actually in your main nav
+        if (mainNavSections.includes(targetId)) {
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' }); 
+          }
         }
       }
-    }
-    // ==========================================
-    // ==========================================
+      // ==========================================
 
-  } catch (error) {
-    document.getElementById(typingId).remove();
-    addMessage("Server is waking up or offline. Please try again later!", "bot-msg");
+    } catch (error) {
+      document.getElementById(typingId).remove();
+      addMessage("Server is waking up or offline. Please try again later!", "bot-msg");
+    }
   }
-}
 
   sendBtn.addEventListener("click", handleSendMessage);
   chatInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleSendMessage();
   });
 
-// Listen for clicks on ANY link inside the chat window
-messagesContainer.addEventListener("click", (e) => {
-  const link = e.target.closest("a"); 
-  if (!link) return; 
-
-  const href = link.getAttribute("href");
-
-  // Only intercept links that start with # (internal navigation)
-  if (href && href.startsWith("#")) {
-    e.preventDefault(); 
-    const targetSection = document.querySelector(href);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+  // Toggle suggestions when clicking the button
+  toggleSuggestionsBtn.addEventListener("click", () => {
+    // toggle() returns true if the class is added (meaning it is now hidden)
+    const isHidden = suggestionsPopout.classList.toggle("hidden-popout");
+    const isOpen = !isHidden; // If it's not hidden, it's open
+    
+    // Add/remove the open class on the button for the glow effect
+    toggleSuggestionsBtn.classList.toggle("open", isOpen);
+    
+    // Swap the icon: X when open, Stars when closed
+    if (isOpen) {
+      suggestionIcon.className = "bi bi-x-lg";
+    } else {
+      suggestionIcon.className = "bi bi-stars"; 
     }
-  }
-  // If it's the PDF link, the browser will just handle the download natively!
-});
-
-const quickReplyBtns = document.querySelectorAll(".quick-reply-btn");
-
-quickReplyBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Just send the text to the AI
-    chatInput.value = btn.innerText;
-    handleSendMessage();
-    
-    // Hide quick replies after clicking
-    document.getElementById("quick-replies").style.display = "none"; 
   });
-});
 
-// Close chat window when clicking outside of it
-document.addEventListener("click", (e) => {
-  // Check if the chat is currently open
-  if (!chatWindow.classList.contains("hidden")) {
+  // Handle clicking a suggestion chip
+  quickReplyBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      chatInput.value = btn.innerText;
+      handleSendMessage(); 
+      closeSuggestions(); // Hide the menu after clicking
+    });
+  });
+
+  // Listen for clicks on ANY link inside the chat window
+  messagesContainer.addEventListener("click", (e) => {
+    const link = e.target.closest("a"); 
+    if (!link) return; 
+
+    const href = link.getAttribute("href");
+
+    // Only intercept links that start with # (internal navigation)
+    if (href && href.startsWith("#")) {
+      e.preventDefault(); 
+      const targetSection = document.querySelector(href);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+
+  // Close chat window when clicking outside of it
+  document.addEventListener("click", (e) => {
+    if (!chatWindow.classList.contains("hidden")) {
+      if (!chatWindow.contains(e.target) && !chatBtn.contains(e.target)) {
+        chatWindow.classList.add("hidden");
+      }
+    }
+  });
+
+// --- HEADER DROPDOWN LOGIC ---
+  const headerMenuBtn = document.getElementById("header-menu-btn");
+  const headerDropdownMenu = document.getElementById("header-dropdown-menu");
+
+  if (headerMenuBtn && headerDropdownMenu) {
+    // Toggle Dropdown when clicking the 3 dots
+    headerMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();      
+      headerDropdownMenu.classList.toggle("show");
+      headerMenuBtn.classList.toggle("active");
+    });
+  }
+
+// --- GLOBAL CLICK LISTENER ---
+  // Handles closing the chat window OR the dropdown menu when clicking outside
+// --- GLOBAL CLICK LISTENER (With Safety Checks) ---
+  document.addEventListener("click", (e) => {
     
-    // Check if the click happened OUTSIDE the chat window 
-    // AND OUTSIDE the chat button (so clicking the button doesn't instantly close it)
-    if (!chatWindow.contains(e.target) && !chatBtn.contains(e.target)) {
-      chatWindow.classList.add("hidden");
+    // 1. Close the header dropdown if clicking outside of it
+    // The "headerDropdownMenu &&" makes sure it exists before checking the class!
+    if (headerDropdownMenu && headerMenuBtn && headerDropdownMenu.classList.contains("show")) {
+      if (!headerDropdownMenu.contains(e.target) && !headerMenuBtn.contains(e.target)) {
+        headerDropdownMenu.classList.remove("show");
+        headerMenuBtn.classList.remove("active");
+      }
+    }
+
+    // 2. Close the entire chat window if clicking outside of it
+    if (chatWindow && chatBtn && !chatWindow.classList.contains("hidden")) {
+      if (!chatWindow.contains(e.target) && !chatBtn.contains(e.target)) {
+        chatWindow.classList.add("hidden");
+        
+        // Also ensure dropdown closes if the whole window closes
+        if (headerDropdownMenu && headerMenuBtn) {
+          headerDropdownMenu.classList.remove("show");
+          headerMenuBtn.classList.remove("active");
+        }
+      }
+    }
+  });
+
+  // --- CLEAR CHAT BUTTON ---
+  const clearBtn = document.getElementById("clear-chat-btn");
+  clearBtn.addEventListener("click", () => {
+    // 1. Clear UI
+    messagesContainer.innerHTML = "";
+    
+    // 2. Restart Greeting
+    addMessage("Hi! I'm trained on Lucky's resume. Ask me about his tech stack, WordPress experience, or projects!", "bot-msg");
+    
+    // 3. Close menus
+    if (typeof closeSuggestions === 'function') closeSuggestions();
+    headerDropdownMenu.classList.remove("show");
+    headerMenuBtn.classList.remove("active");
+  });
+
+// --- CLOSE CHAT BUTTON ---
+  // Changed the target ID here!
+  const closeBtn = document.getElementById("menu-close-btn"); 
+  
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      chatWindow.classList.add("hidden"); 
+      
+      if (headerDropdownMenu && headerMenuBtn) {
+        headerDropdownMenu.classList.remove("show");
+        headerMenuBtn.classList.remove("active");
+      }
+    });
+  }
+
+  // Add Message Helper Function
+  function addMessage(text, className, isTyping = false) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = `msg ${className}`;
+    
+    if (isTyping) {
+      msgDiv.id = "typing-indicator";
+      msgDiv.innerHTML = `<div class="typing-dots"><span></span><span></span><span></span></div>`;
+    } else {
+      msgDiv.innerHTML = text;
     }
     
+    messagesContainer.appendChild(msgDiv);
+    
+    messagesContainer.scrollTo({
+      top: messagesContainer.scrollHeight,
+      behavior: 'smooth'
+    });
+    
+    return msgDiv.id;
   }
 });
-
-const clearBtn = document.getElementById("clear-chat-btn");
-
-clearBtn.addEventListener("click", () => {
-  // Clear all messages
-  messagesContainer.innerHTML = "";
-  
-  // Bring back the initial greeting
-  addMessage("Hi! I'm trained on Lucky's resume. Ask me about his tech stack, WordPress experience, or projects!", "bot-msg");
-  
-  // Bring back the quick replies if you hid them earlier
-  const quickReplies = document.getElementById("quick-replies");
-  if (quickReplies) quickReplies.style.display = "flex";
-});
-
-function addMessage(text, className, isTyping = false) {
-  const msgDiv = document.createElement("div");
-  msgDiv.className = `msg ${className}`;
-  
-  if (isTyping) {
-    msgDiv.id = "typing-indicator";
-    // Inject the animated dots HTML instead of text
-    msgDiv.innerHTML = `<div class="typing-dots"><span></span><span></span><span></span></div>`;
-  } else {
-    msgDiv.innerHTML = text;
-  }
-  
-  messagesContainer.appendChild(msgDiv);
-  
-  // Smooth scrolling instead of instant jumping
-  messagesContainer.scrollTo({
-    top: messagesContainer.scrollHeight,
-    behavior: 'smooth'
-  });
-  
-  return msgDiv.id;
-}
-});
-
 function openGameWindow(url) {
   const screenWidth = window.screen.availWidth;
   const screenHeight = window.screen.availHeight;
