@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
 
       <div class="text-center mt-5" data-aos="fade-up">
-        <a href="https://luckytaorem.github.io/blog/" class="btn btn-primary px-4 py-2 rounded-pill fw-bold">
+        <a href="https://ltdeveloperblogs.github.io/" class="btn btn-primary px-4 py-2 rounded-pill fw-bold">
           View All Articles
         </a>
       </div>
@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const loading = document.getElementById("blog-loading");
 
     // Hugo automatically generates an RSS feed at this URL
-    const rssUrl = "https://luckytaorem.github.io/blog/posts/index.xml";
+    const rssUrl = "https://ltdeveloperblogs.github.io/posts/index.xml";
 
     fetch(rssUrl)
       .then(response => {
@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", function() {
           // --- SMART IMAGE EXTRACTOR ---
           const cleanLink = link.replace(/\/$/, ""); 
           const slug = cleanLink.substring(cleanLink.lastIndexOf('/') + 1);
-          const imageSrc = `https://luckytaorem.github.io/blog/images/${slug}.jpg`;
+          const imageSrc = `https://ltdeveloperblogs.github.io/images/${slug}.jpg`;
           const fallbackImage = "https://placehold.co/600x400/1a1a1a/0d6efd?text=Tech+Article";
 
           // Calculate delay for AOS animation (100, 200, 300)
