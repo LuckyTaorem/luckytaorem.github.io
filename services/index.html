@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Design Studio | Risk-Free Custom Website Creation</title>
+    <title>Lucky Design Studio | Risk-Free Custom Landing Page Creation</title>
     <link rel="canonical" href="https://luckytaorem.github.io/services/" />
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Lucky Design Studio | Risk-Free Custom Website Creation">
-    <meta name="description" content="Get a complete, custom-designed website for just ₹1,000 INR. Zero upfront costs. You only pay when you review and approve the final live build.">
-    <meta name="keywords" content="Lucky Design Studio, custom website, web developer, affordable web design, UI/UX, responsive development, secure code, India web design">
+    <meta name="title" content="Lucky Design Studio | Risk-Free Custom Landing Page Creation">
+    <meta name="description" content="Get a complete, custom-designed landing page for just ₹300 INR. Zero upfront costs. You only pay when you review and approve the final live build.">
+    <meta name="keywords" content="Lucky Design Studio, custom landing page, web developer, affordable web design, UI/UX, responsive development, secure code, India web design">
     <meta name="author" content="Lucky">
     <meta name="robots" content="index, follow">
 
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luckytaorem.github.io/">
     <meta property="og:title" content="Lucky Design Studio | Professional Web & Design Solutions">
-    <meta property="og:description" content="A complete, custom-designed website for just ₹1,000 INR. No upfront costs. You only pay when you review and approve the final live build.">
+    <meta property="og:description" content="A complete, custom-designed landing page for just ₹300 INR. No upfront costs. You only pay when you review and approve the final live build.">
     <!-- Replace with an actual URL to your site's preview image -->
     <meta property="og:image" content="https://luckytaorem.github.io/services/social-preview.png"> 
 
@@ -24,7 +24,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://luckytaorem.github.io/">
     <meta property="twitter:title" content="Lucky Design Studio | Professional Web & Design Solutions">
-    <meta property="twitter:description" content="A complete, custom-designed website for just ₹1,000 INR. No upfront costs. You only pay when you review and approve the final live build.">
+    <meta property="twitter:description" content="A complete, custom-designed landing page for just ₹300 INR. No upfront costs. You only pay when you review and approve the final live build.">
     <!-- Replace with an actual URL to your site's preview image -->
     <meta property="twitter:image" content="https://luckytaorem.github.io/services/social-preview.png">
 
@@ -41,22 +41,22 @@
       "@id": "https://luckytaorem.github.io/",
       "url": "https://luckytaorem.github.io/",
       "telephone": "",
-      "priceRange": "₹1000",
-      "description": "Professional Website Creation Made Simple. A complete, custom-designed website engineered with premium UI/UX.",
+      "priceRange": "₹300",
+      "description": "Professional Landing Page Creation Made Simple. A complete, custom-designed landing page engineered with premium UI/UX.",
       "areaServed": {
         "@type": "Country",
         "name": "India"
       },
       "makesOffer": {
         "@type": "Offer",
-        "name": "Risk-Free Website Build",
-        "price": "1000.00",
+        "name": "Risk-Free Landing Page Build",
+        "price": "300.00",
         "priceCurrency": "INR",
-        "description": "A complete, custom-designed website for just ₹1,000 INR. No upfront costs. You only pay when you review and approve the final live build."
+        "description": "A complete, custom-designed landing page for just ₹300 INR. No upfront costs. You only pay when you review and approve the final live build."
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Web Design & Development Services",
+        "name": "Landing Page Design & Development Services",
         "itemListElement": [
           {
             "@type": "Offer",
@@ -105,6 +105,7 @@
 
         * {
             box-sizing: border-box;
+            user-select: none;
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -144,8 +145,9 @@
 
         .brand-column {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
             text-decoration: none;
         }
 
@@ -287,6 +289,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            margin-top:25px;
         }
 
         .service-card {
@@ -746,10 +749,58 @@
             transform: translateY(-9px) rotate(-45deg);
         }
 
+        /* --- Interactive Animations & Infographic Styles --- */
+        
+        /* 1. Scroll Reveal Baseline */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 2. Delay Utilities for Grids (Staggered fading) */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* 3. Workflow Infographic Connector Line (Desktop Only) */
+        .process-grid {
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .process-grid::before {
+                content: '';
+                position: absolute;
+                top: 62px; /* Aligns exactly with the center of your step numbers */
+                left: 12%;
+                right: 12%;
+                height: 2px;
+                background: var(--primary);
+                opacity: 0.2;
+                z-index: -1;
+            }
+        }
+        
+        /* 4. Attention-Grabbing Pulse for Workflow Numbers */
+        @keyframes softPulse {
+            0% { box-shadow: 0 0 0 0 rgba(224, 86, 56, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(224, 86, 56, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(224, 86, 56, 0); }
+        }
+        .step-number {
+            animation: softPulse 2s infinite;
+        }
+
         /* --- Mobile Responsive Rules --- */
         @media (max-width: 768px) {
             .brand-column {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start; /* Aligns them neatly to the left */
         gap: 4px; /* Reduces the gap for vertical stacking */
     }
@@ -802,6 +853,93 @@
             .process-grid { gap: 15px; }
             .footer-nav { flex-direction: column; gap: 15px; }
         }
+
+        /* --- Automation Infographic Styles --- */
+        .infographic-wrapper {
+            background: var(--surface-card);
+            border-radius: 24px;
+            border: 1px solid var(--border-warm);
+            padding: 50px 20px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .flow-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-top: 40px;
+            position: relative;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* The Connecting Line (Desktop Only) */
+        @media (min-width: 768px) {
+            .flow-container {
+                flex-direction: row;
+                gap: 0;
+            }
+            .flow-container::before {
+                content: '';
+                position: absolute;
+                top: 40px; /* Aligns with the center of the icons */
+                left: 15%;
+                right: 15%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary) 0%, rgba(16, 185, 129, 0.8) 100%);
+                opacity: 0.2;
+                z-index: 1;
+            }
+        }
+
+        .flow-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .flow-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-warm);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 10px 20px rgba(224, 86, 56, 0.15);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Special border color for the sync step to match the green add-on theme */
+        .flow-step:nth-child(3) .flow-icon {
+            border-color: #10B981;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .flow-step:hover .flow-icon {
+            transform: scale(1.15) translateY(-5px);
+        }
+
+        .flow-step h4 {
+            color: var(--text-main);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .flow-step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-width: 250px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -831,8 +969,8 @@
 
     <!-- 1. Hero Section (Top Fold) -->
     <section class="hero">
-        <h1>Professional Website Creation <span>Made Simple</span>.</h1>
-        <p>A complete, custom-designed website for just <strong>₹1,000 INR</strong>. No upfront costs. You only pay when you review and approve the final live build.</p>
+        <h1>Professional Landing Page Creation <span>Made Simple</span>.</h1>
+        <p>A complete, custom-designed landing page for just <strong>₹300 INR</strong>. No upfront costs. You only pay when you review and approve the final live build.</p>
         <div class="hero-cta-group">
             <a href="#contact" class="btn-warm">Start Your Risk-Free Project</a>
             <a href="#workflow" class="btn-secondary">See How It Works</a>
@@ -841,69 +979,113 @@
 
     <!-- 2. Service Overview -->
     <section id="services" class="services-section">
-        <div class="section-header">
-            <h2>We build websites that drive results.</h2>
+        <div class="service-card reveal">
+            <h2>We build landing pages that drive results.</h2>
             <p>Everything you need to establish a high-performing, welcoming online presence.</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card reveal delay-1">
                 <div class="service-icon">🎨</div>
                 <h3>Custom Design</h3>
                 <p>Tailored layouts crafted uniquely around your brand identity to engage visitors instantly.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal delay-2">
                 <div class="service-icon">⚙️</div>
                 <h3>Responsive Development</h3>
                 <p>Seamless experiences optimized to look and function beautifully across mobile, tablet, and desktop.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal delay-3">
                 <div class="service-icon">🔒</div>
                 <h3>Secure Code</h3>
                 <p>Clean, reliable architecture that you own completely once the project is approved and finalized.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal delay-1">
                 <div class="service-icon">🚀</div>
                 <h3>Speed Optimization</h3>
                 <p>Lightning-fast load times engineered to rank higher on search engines and retain attention.</p>
+            </div>
+            <!-- Add this new AI Service Card -->
+            <div class="service-card reveal delay-2">
+                <div class="service-icon">🤖</div>
+                <h3>Smart AI Integration</h3>
+                <p>Custom automated chat widgets that answer customer questions and capture leads for you 24/7.</p>
+            </div>
+
+            <!-- Google Sheets Sync Service Card -->
+            <div class="service-card reveal delay-3">
+                <div class="service-icon">📊</div>
+                <h3>Automated Data Sync</h3>
+                <p>Never lose a lead. We use background webhooks to instantly push every new form submission directly into a live, organized Google Sheet.</p>
             </div>
         </div>
     </section>
 
     <!-- 3. The Workflow / Pricing Section -->
     <section id="workflow" class="workflow-section">
-        <div class="section-header">
-            <h2>The ₹1,000 Risk-Free Protocol</h2>
+        <div class="section-header reveal">
+            <h2>The ₹300 Risk-Free Protocol</h2>
             <p>A transparent, zero-risk process designed to give you exactly what you want.</p>
         </div>
         
         <div class="process-grid">
-            <div class="process-step">
+            <div class="process-step reveal delay-1">
                 <div class="step-number">1</div>
                 <h3>Submit Request</h3>
                 <p>Fill out the simple intake form below with your brand details and vision.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal delay-2">
                 <div class="step-number">2</div>
                 <h3>I Build It</h3>
-                <p>I get to work crafting a custom, fully functional website for your business.</p>
+                <p>I get to work crafting a custom, fully functional landing page for your business.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal delay-3">
                 <div class="step-number">3</div>
                 <h3>You Review</h3>
                 <p>You inspect a live, working demo of the site. Request tweaks if needed.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal delay-1">
                 <div class="step-number">4</div>
                 <h3>Pay & Receive</h3>
                 <p>If you love it, you pay the flat fee and I immediately send you the full source code.</p>
             </div>
         </div>
 
-        <div class="offer-banner">
-            <h3 style="font-size: 1.5rem; color: var(--text-main);">One Simple Plan</h3>
-            <div class="offer-price">₹1,000 INR</div>
-            <p>You pay absolutely nothing upfront. You only process the payment when you are 100% satisfied with the final result.</p>
-            <a href="#contact" class="btn-warm">Initialize Your Build Now</a>
+        <!-- Power-Ups Banner (Paste below the existing offer-banner) -->
+        <div class="offer-banner reveal" style="margin-top: 30px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.1)); border-color: rgba(16, 185, 129, 0.2);">
+            <h3 style="font-size: 1.4rem; color: var(--text-main);">⚡ Available Add-Ons</h3>
+            <p style="margin: 15px auto; color: var(--text-main);">
+                <strong>+ Smart AI Chatbot (₹200)</strong><br>
+                <strong>+ Live Google Sheets Sync (₹150)</strong>
+            </p>
+            <p>Upgrade your base ₹300 site with professional data automation and 24/7 AI lead capture.</p>
+        </div>
+    </section>
+
+    <!-- 3.5 Automation Infographic -->
+    <section class="infographic-section reveal" style="margin: 0 auto 100px auto; padding: 0 20px; max-width: 1000px;">
+        <div class="infographic-wrapper">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h2>The Automated Lead Pipeline</h2>
+                <p>How the AI and Webhook power-ups capture and organize your clients behind the scenes.</p>
+            </div>
+            
+            <div class="flow-container">
+                <div class="flow-step reveal delay-1">
+                    <div class="flow-icon">👀</div>
+                    <h4>1. Traffic Arrives</h4>
+                    <p>Visitors land on your lightning-fast, custom-coded page.</p>
+                </div>
+                <div class="flow-step reveal delay-2">
+                    <div class="flow-icon">🤖</div>
+                    <h4>2. AI Engagement</h4>
+                    <p>The smart chatbot answers questions and captures contact details 24/7.</p>
+                </div>
+                <div class="flow-step reveal delay-3">
+                    <div class="flow-icon">⚡</div>
+                    <h4>3. Instant Sync</h4>
+                    <p>Data is instantly fired via webhooks directly into your live Google Sheet.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -989,7 +1171,7 @@
 
     <!-- 6. Lead Capture / Conversion Driver -->
     <section id="contact" class="form-section">
-        <div class="form-wrapper">
+        <div class="form-wrapper reveal">
             <h2>Start Your Risk-Free Project</h2>
             <p class="form-sub">Submit your details below. I will build your site and send you a live link to review.</p>
             
@@ -1029,6 +1211,34 @@
                 <div class="form-group">
                     <label>Project Goals & Details</label>
                     <textarea name="projectDetails" class="form-control" required placeholder="Tell me about what you're looking to build, your preferred colors, and core goals..."></textarea>
+                </div>
+
+                <!-- Premium Upgrades Container -->
+                <div class="form-group" style="background: var(--surface-tint); padding: 20px; border-radius: 12px; border: 1px solid var(--border-warm); display: flex; flex-direction: column; gap: 15px;">
+                    <label style="font-size: 1.05rem; margin-bottom: 5px; color: var(--text-main);">⚡ Optional Power-Ups</label>
+                    
+                    <!-- AI Add-on -->
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
+                        <input type="checkbox" name="addon_ai" value="Yes" style="width: 20px; height: 20px; margin-top: 3px; accent-color: var(--primary);">
+                        <span style="color: var(--text-main); font-size: 0.95rem;">
+                            <strong>Smart AI Chatbot (+₹200)</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Include a 24/7 automated assistant on my page to capture leads.</span>
+                        </span>
+                    </label>
+
+                    <!-- Google Sheets Sync Add-on -->
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
+                        <input type="checkbox" name="addon_sheets" value="Yes" style="width: 20px; height: 20px; margin-top: 3px; accent-color: var(--primary);">
+                        <span style="color: var(--text-main); font-size: 0.95rem;">
+                            <strong>Automated Google Sheets Sync (+₹150)</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Never lose a lead. All your customer inquiries are automatically organized in a live Google Sheet.</span>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Live Price Preview -->
+                <div style="text-align: right; font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 15px; padding-top: 10px;">
+                    Total Estimated Investment: <span id="livePrice" style="color: var(--primary); font-size: 1.3rem;">₹300</span>
                 </div>
 
                 <button type="submit" id="submitBtn" class="btn-submit">Submit Details & Initialize Build</button>
@@ -1106,6 +1316,7 @@
                     statusDiv.classList.add('success');
                     statusDiv.style.display = 'block'; // Force visibility
                     form.reset(); // Clear the form fields
+                    updatePrice(); // Reset the live price back to ₹300
                 } else {
                     statusDiv.textContent = result.error || '❌ System error. Please try again.';
                     statusDiv.classList.add('error');
@@ -1159,6 +1370,38 @@
                 mainNav.classList.remove('active');
             });
         });
+
+        // --- Scroll Reveal Animation Logic ---
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Runs only once per element
+                }
+            });
+        }, { 
+            rootMargin: "0px 0px -50px 0px", 
+            threshold: 0.1 
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Live Price Preview Logic ---
+        const aiCheckbox = document.querySelector('input[name="addon_ai"]');
+        const sheetsCheckbox = document.querySelector('input[name="addon_sheets"]');
+        const livePriceDisplay = document.getElementById('livePrice');
+
+        function updatePrice() {
+            let total = 300; // Base landing page price
+            if (aiCheckbox.checked) total += 200;
+            if (sheetsCheckbox.checked) total += 150;
+            livePriceDisplay.textContent = `₹${total}`;
+        }
+
+        aiCheckbox.addEventListener('change', updatePrice);
+        sheetsCheckbox.addEventListener('change', updatePrice);
     </script>
 
 </body>
