@@ -436,6 +436,79 @@ if (currentTheme) {
 
 })()
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Selects Blogs, Certificates, Repos, Projects, and all Buttons
+  const targetSelector = `
+    .repo-card, .cert-card, .product-card, #blog-teasers .card, 
+    .services .icon-box, .about .image,
+    .btn, .page-btn, .btn-add-to-cart, .ai-chat-btn, #send-chat-btn, button[type="submit"]
+  `;
+
+  // 1. MOUSE OVER: Trigger the Single Ripple
+  document.body.addEventListener("mouseover", (e) => {
+    const el = e.target.closest(targetSelector);
+    if (!el) return;
+
+    // Ensure we are entering from outside the card 
+    const related = e.relatedTarget;
+    if (related && el.contains(related)) return;
+
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left; 
+    const y = e.clientY - rect.top;
+
+    let rippleContainer = el.querySelector('.ripple-container');
+    if (!rippleContainer) {
+      rippleContainer = document.createElement('div');
+      rippleContainer.className = 'ripple-container';
+      el.insertBefore(rippleContainer, el.firstChild);
+    }
+
+    const ripple = document.createElement('span');
+    ripple.className = 'single-ripple';
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    
+    rippleContainer.appendChild(ripple);
+
+    // Matches the new slowed-down 1.5s (1500ms) CSS animation
+    setTimeout(() => {
+      ripple.remove();
+    }, 1500); 
+  });
+
+  // 2. MOUSE MOVE: Handle the 3D Tilt 
+  document.body.addEventListener("mousemove", (e) => {
+    const el = e.target.closest(targetSelector);
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left; 
+    const y = e.clientY - rect.top;  
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const maxRotate = 12; 
+    
+    const rotateX = ((y - centerY) / centerY) * -maxRotate;
+    const rotateY = ((x - centerX) / centerX) * maxRotate;
+
+    el.style.transition = "none";
+    el.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+
+  // 3. MOUSE OUT: Smoothly reset the card
+  document.body.addEventListener("mouseout", (e) => {
+    const el = e.target.closest(targetSelector);
+    if (!el) return;
+
+    const related = e.relatedTarget;
+    if (related && el.contains(related)) return;
+
+    el.style.transition = "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)";
+    el.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("gameContainer");

@@ -75,11 +75,6 @@ section.services {
     box-shadow: var(--box-shadow);
 }
 
-.repo-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--form-button);
-}
-
 .repo-header {
     display: flex;
     justify-content: space-between;
@@ -174,20 +169,12 @@ section.services {
   background: var(--icon-box-background, #fff);
   border: 1px solid var(--card-border, #e0e0e0);
   border-radius: 12px;
-  overflow: hidden;
   height: 100%; /* Makes all cards same height */
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   position: relative; /* Keep context */
-}
-
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  border-color: var(--form-button, #ffb727);
-  cursor: pointer;
 }
 
 /* Image Wrapper - Forces images to look uniform */
@@ -208,10 +195,6 @@ section.services {
   object-fit: contain; /* Shows whole certificate without cropping */
   padding: 10px;       /* White space around cert */
   transition: transform 0.5s ease;
-}
-
-.cert-card:hover .cert-img-wrapper img {
-  transform: scale(1.05);
 }
 
 .cert-body {
@@ -792,6 +775,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 h1,h2,h3,h4,h5,span,p,a,img,.product-card,.cert-card,.repo-card,.icon-box,.card-body,footer,.row,button{z-index: 2;}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -1046,18 +1030,6 @@ section {
   filter: contrast(1.05) saturate(0.9);
 }
 
-/* Hover Effect: The "Lift" */
-.about .image:hover {
-  /* Scales up slightly and moves up */
-  transform: scale(1.02) translateY(-10px);
-  
-  /* Shadow grows to create the illusion of floating higher */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-  
-  /* Image becomes vibrant */
-  filter: contrast(1.1) saturate(1.1);
-}
-
 /* Mobile Adjustment */
 @media (max-width: 768px) {
   .about .image {
@@ -1248,6 +1220,124 @@ hr {
   transition: .5s background-color;
 }
 
+/* =========================================
+   UNIVERSAL 3D PARALLAX ENGINE
+   ========================================= */
+
+   /* Enable 3D depth for buttons */
+.btn, .page-btn, .btn-add-to-cart, .ai-chat-btn, #send-chat-btn, button[type="submit"] {
+  transform-style: preserve-3d;
+  /* Ensures any icon inside the button pops out slightly on hover */
+}
+
+.btn:hover i, .ai-chat-btn:hover i, button[type="submit"]:hover {
+  transform: translateZ(15px);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* 1. Add perspective to all grid containers */
+.row, .product-grid, #cert-grid, #blog-teasers {
+  perspective: 1200px;
+}
+
+/* 2. Base setup for ALL cards & the About image */
+.repo-card, .cert-card, .product-card, #blog-teasers .card, .about .image {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.3s ease !important;
+  /* Override overflow so elements can pop out in 3D space */
+  overflow: visible !important; 
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. Universal 3D Hover Tilt */
+/* Updated Universal Hover (No static transforms, JS handles the movement) */
+.repo-card:hover, .cert-card:hover, .product-card:hover, 
+#blog-teasers .card:hover, .about .image:hover, .services .icon-box:hover {
+  box-shadow: -15px 25px 40px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--form-button, #ffb727) !important;
+  z-index: 10; 
+}
+
+/* 4. Prepare internal elements for Parallax */
+.repo-card img, .cert-card img, .product-card img, #blog-teasers .card img,
+.repo-header, .cert-body h5, .product-title, #blog-teasers .card-title {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 5. Parallax Pop-Out: Images float the highest */
+.repo-card:hover img, .cert-card:hover img, .product-card:hover img, #blog-teasers .card:hover img {
+  transform: translateZ(45px) scale(1.03) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Shadow under the popped image */
+  border-radius: 8px; /* Restores rounded corners since overflow is visible */
+}
+
+/* 6. Parallax Pop-Out: Titles float in the middle */
+.repo-card:hover .repo-header, .cert-card:hover .cert-body h5, 
+.product-card:hover .product-title, #blog-teasers .card:hover .card-title {
+  transform: translateZ(25px) !important;
+  color: var(--form-button, #ffb727) !important;
+}
+
+/* =========================================
+   SINGLE HOVER RIPPLE & THEME EFFECT
+   ========================================= */
+
+/* 1. Theme-aware variables for the ripple and hover state */
+:root {
+  --ripple-bg: rgba(255, 255, 255, 0.25); /* White splash for Dark Mode */
+  --card-hover-filter: brightness(1.15);  /* Lightens the card */
+}
+
+[data-theme="light"] {
+  --ripple-bg: rgba(0, 0, 0, 0.12);       /* Darker splash for Light Mode */
+  --card-hover-filter: brightness(0.96);  /* Adds slight contrast to white cards */
+}
+
+/* 2. Apply the theme-aware filter on hover */
+.repo-card:hover, .cert-card:hover, .product-card:hover, 
+#blog-teasers .card:hover, .services .icon-box:hover, .about .image:hover {
+  filter: var(--card-hover-filter);
+  transition: filter 0.3s ease;
+}
+
+/* 3. Container to keep the ripple inside the borders */
+.ripple-container {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  border-radius: inherit; 
+  pointer-events: none;
+  z-index: 0; /* Keeps it behind your 3D popping text */
+}
+
+/* 4. The Slowed-Down Single Ripple Wave */
+.single-ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--ripple-bg); /* Automatically changes based on theme! */
+  transform: translate(-50%, -50%) scale(0);
+  
+  /* Slowed down to 1.5 seconds with a graceful easing curve */
+  animation: single-splash 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  pointer-events: none;
+}
+
+/* 5. Splash Animation */
+@keyframes single-splash {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(60); 
+    opacity: 0; 
+  }
+}
+
 /*--------------------------------------------------------------
 #shop
 ----------------------------------------------------------------*/
@@ -1264,15 +1354,11 @@ hr {
     border: 1px solid #eee;
     background: #fff;
     border-radius: 8px;
-    overflow: hidden; /* Keeps content inside rounded corners */
     display: flex;
     flex-direction: column; /* Ensures footer aligns at bottom if needed */
     transition: box-shadow 0.3s ease;
 }
 
-.product-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
 
 /* Image Wrapper & Styling - MAKES IMAGES UNIFORM */
 .product-image-wrapper {
@@ -1288,10 +1374,6 @@ hr {
     object-fit: cover; /* KEY: Crops image to fit the box without stretching */
     object-position: center;
     transition: transform 0.3s ease;
-}
-
-.product-card:hover .product-image-wrapper img {
-    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 /* Details Section */
@@ -1376,20 +1458,6 @@ hr {
   background-color: var(--bg-color);
   transition: .5s background-color;
 }
-.services .icon-box {
-  margin:20px 0;
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  background: var(--icon-box-background);
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-  border: 1px solid var(--icon-box-background);
-  transition: all 0.3s ease-in-out;
-  border-radius: 10px;
-  height: 100%;
-}
 .services .icon {
   margin: 0 auto 20px auto;
   padding-top: 17px;
@@ -1419,26 +1487,80 @@ hr {
   line-height: 28px;
   margin-bottom: 0;
 }
-.services .icon-box:hover {
-  border-color: #ffb727;
-  transform: translateY(-10px); /* Lifts the card up slightly */
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
-}
+
 .services .icon-box:hover .title a {
   color: #ffb727;
   transition: color 0.3s ease;
 }
 
+/* 1. Add perspective to the parent container for depth */
+.services .row {
+  perspective: 1200px;
+}
+
+/* 2. Base Card Setup (Removed overflow:hidden) */
+.services .icon-box {
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  background: var(--icon-box-background);
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  text-align: center;
+  border: 1px solid var(--icon-box-background);
+  border-radius: 10px;
+  height: 100%;
+  
+  /* CRITICAL: Allows child elements to pop out in 3D */
+  transform-style: preserve-3d;
+  
+  /* Smooth, physics-based transition */
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+}
+
+/* 3. Card Tilt & Lift on Hover */
+.services .icon-box:hover {
+  border-color: #ffb727; /* Matches your theme */
+  /* Tilts the card slightly backward and to the side while lifting it */
+  transform: translateY(-10px) rotateX(6deg) rotateY(-4deg);
+  box-shadow: -15px 25px 40px rgba(0, 0, 0, 0.2); 
+}
+
+/* 4. Prepare Children for Parallax */
+.services .icon-box img,
+.services .icon-box .title,
+.services .icon-box .description {
+  /* Give them the same smooth easing as the card */
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+}
+
+/* Fix image rounding since overflow: hidden is gone */
 .services .icon-box img {
-  transition: transform 0.4s ease-in-out;
-  border-radius: 10px 10px 0 0; /* Rounds the top corners of the image */
+  border-radius: 8px;
 }
 
+/* 5. 3D Pop-Out Effects on Hover */
+
+/* Image floats the highest */
 .services .icon-box:hover img {
-  transform: scale(1.05); /* Zooms the image in slightly without affecting layout */
+  transform: translateZ(50px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15); /* Adds a shadow behind the floating image */
 }
 
+/* Title floats in the middle */
+.services .icon-box:hover .title {
+  transform: translateZ(35px);
+}
 
+/* Description floats slightly */
+.services .icon-box:hover .description {
+  transform: translateZ(20px);
+}
+
+/* Change title color on hover */
+.services .icon-box:hover .title a {
+  color: #ffb727;
+  transition: color 0.3s ease;
+}
 
 .game-list {
     display: grid;
