@@ -1386,6 +1386,9 @@ hr {
   transition: all 0.3s ease-in-out;
   text-align: center;
   border: 1px solid var(--icon-box-background);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  height: 100%;
 }
 .services .icon {
   margin: 0 auto 20px auto;
@@ -1418,9 +1421,21 @@ hr {
 }
 .services .icon-box:hover {
   border-color: #ffb727;
+  transform: translateY(-10px); /* Lifts the card up slightly */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
 }
 .services .icon-box:hover .title a {
   color: #ffb727;
+  transition: color 0.3s ease;
+}
+
+.services .icon-box img {
+  transition: transform 0.4s ease-in-out;
+  border-radius: 10px 10px 0 0; /* Rounds the top corners of the image */
+}
+
+.services .icon-box:hover img {
+  transform: scale(1.05); /* Zooms the image in slightly without affecting layout */
 }
 
 
